@@ -1,0 +1,71 @@
+@prefix : <http://irkb.com/ir-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<http://irkb.com/incident/28792> a :Incident ;
+    :hasIncidentId "28792" ;
+    :hasIncidentName "Test Incident One" ;
+    :hasIncidentDescription "Description for Test Incident One" ;
+    :hasIncidentSeverity "2" ;
+    :hasIncidentCreationDateTime "17/06/2025 13:01"^^xsd:dateTime ;
+    :hasConfirmationDateTime "17/06/2025 12:59"^^xsd:dateTime ;
+    :hasEndDateTime "17/06/2025 14:37"^^xsd:dateTime ;
+    :hasIncidentStatus "Resolved" ;
+    :hasIncidentStage "Closed" ;
+    :hasConfirmationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoa <http://irkb.com/coa/28792_Detection> ;
+<http://irkb.com/coa/28792_Detection> a :CourseOfAction, :Detection ;
+    :hasCoaDescription "Detection of Test Incident One" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-06-17 13:01:50"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-06-17 13:04:53"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-06-17 14:35:32"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] .
+
+    :hasCoa <http://irkb.com/coa/28792_Analysis> ;
+<http://irkb.com/coa/28792_Analysis> a :CourseOfAction, :Analysis ;
+    :hasCoaDescription "IoC Analysis" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-06-17 13:05:55"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-06-17 14:33:43"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-06-17 14:35:36"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] .
+
+    :hasCoa <http://irkb.com/coa/28792_Containment> ;
+<http://irkb.com/coa/28792_Containment> a :CourseOfAction, :Containment ;
+    :hasCoaDescription "Description of process" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-06-17 13:09:52"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-06-17 14:33:45"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-06-17 14:36:02"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] .
+
+    :hasArtefact <http://irkb.com/artefact/28792_hostname> ;
+<http://irkb.com/artefact/28792_hostname> a :Artefact ;
+    :hasArtefactType "hostname" ;
+    :hasArtefactDataValue "pc1" ;
+    :hasArtefactCreationDateTime "2025-06-17 13:09:19"^^xsd:dateTime ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] .
+
+    :hasArtefact <http://irkb.com/artefact/28792_ip> ;
+<http://irkb.com/artefact/28792_ip> a :Artefact ;
+    :hasArtefactType "ip" ;
+    :hasArtefactDataValue "1.1.1.1" ;
+    :hasArtefactCreationDateTime "2025-06-17 13:06:36"^^xsd:dateTime ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] .
+
+    prov:wasGeneratedBy <http://irkb.com/analysis/28792_ip> ;
+<http://irkb.com/analysis/28792_ip> a :SecurityAnalysis ;
+    :hasSecurityAnalysisType "ip" ;
+    :hasSecurityAnalysisDataValue "1.1.1.1" ;
+    :hasSecurityAnalysisDateTime "10/07/2025 14:34"^^xsd:dateTime ;
+    :hasSecurityAnalysisDetails "level=info, namespace=AbuseIPDB, predicate=Is Whitelist, value=True | level=info, namespace=AbuseIPDB, predicate=Usage Type, value=Content Delivery Network | level=safe, namespace=AbuseIPDB, predicate=Abuse Confidence Score, value=0 | level=info, namespace=AbuseIPDB, predicate=Records, value=57" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] .
+
+.

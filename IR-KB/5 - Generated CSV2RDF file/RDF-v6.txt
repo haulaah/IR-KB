@@ -1,0 +1,256 @@
+@prefix : <http://irkb.com/ir-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<http://irkb.com/ir-ontology/incident/28792> a :Incident ;
+    :hasIncidentId "28792" ;
+    :hasIncidentName "Test Incident One" ;
+    :hasIncidentDescription "Description for Test Incident One" ;
+    :hasIncidentSeverity "2" ;
+    :hasIncidentCreationDateTime "2025-06-17T13:01"^^xsd:dateTime ;
+    :hasConfirmationDateTime "2025-06-17T12:59"^^xsd:dateTime ;
+    :hasEndDateTime "2025-06-17T14:37"^^xsd:dateTime ;
+    :hasIncidentStatus "Resolved" ;
+    :hasIncidentStage "Closed" ;
+    :hasConfirmationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/28792_Detection> ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/28792_Analysis> ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/28792_Containment> ;
+    :hasArtefact <http://irkb.com/ir-ontology/artefact/28792_a37a4dcf-4407-43db-a86b-4c8be6926cfe> ;
+    :hasArtefact <http://irkb.com/ir-ontology/artefact/28792_8aa337a6-bc73-415c-a675-e3a592c6d1fe> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_1> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_2> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_3> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_4> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_5> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_6> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_7> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_8> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_9> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_10> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_11> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_12> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_13> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_14> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_15> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_16> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_17> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_18> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_19> ;
+    :hasSecurityAnalysis <http://irkb.com/ir-ontology/securityanalysis/28792_6c672d1a-5e4d-4e64-82ae-7f25bc98ca63> ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/28792_Detection> a :CourseOfAction ;
+    a :Detection ;
+    :hasCoaDescription "Detection of Test Incident One" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-06-17T13:01"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-06-17T13:04"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-06-17T14:35"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/28792_Analysis> a :CourseOfAction ;
+    a :Analysis ;
+    :hasCoaDescription "IoC Analysis" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-06-17T13:05"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-06-17T14:33"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-06-17T14:35"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/28792_Containment> a :CourseOfAction ;
+    a :Containment ;
+    :hasCoaDescription "Description of process" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-06-17T13:09"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-06-17T14:33"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-06-17T14:36"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/artefact/28792_43841a93-306d-4291-a7d7-b64432de7329> a :Artefact ;
+    :hasArtefactType "hostname" ;
+    :hasArtefactDataValue "pc1" ;
+    :hasArtefactCreator [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2025-06-17T13:09"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/artefact/28792_4c57f572-2208-4076-89fe-0955ea36a900> a :Artefact ;
+    :hasArtefactType "ip" ;
+    :hasArtefactDataValue "1.1.1.1" ;
+    :hasArtefactCreator [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2025-06-17T13:06"^^xsd:dateTime ;
+.
+
+<http://irkb.com/event/28792_3035> a :SecurityEvent ;
+    :hasEventTitle "Malicious inbound communication twice once" ;
+    :hasSecurityEventId "3035" ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_1> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_2> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_3> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_4> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_5> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_6> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_7> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_8> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_9> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_10> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_11> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_12> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_13> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_14> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_15> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_16> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_17> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_18> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/28792_3035_action_19> ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_1> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Malicious inbound communication twice once" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:39"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_2> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #3035: Network activity/ip-src 1.1.1.1" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:38"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_3> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "test report 2" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:20"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_4> a :SecurityEventAction ;
+    :hasSecurityEventActivity "soft_delete" ;
+    :hasSecurityEventDescription "Attribute from Event #3035: Targeting data/target-user user1" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:19"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_5> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Malicious inbound communication twice once" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:13"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_6> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "test report" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:09"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_7> a :SecurityEventAction ;
+    :hasSecurityEventActivity "tag" ;
+    :hasSecurityEventDescription "Attached global tag \"INT-NETWORK\" to attribute #3223378" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:09"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_8> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Malicious inbound communication twice" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:06"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_9> a :SecurityEventAction ;
+    :hasSecurityEventActivity "tag" ;
+    :hasSecurityEventDescription "Attached global tag \"source:OSINT\" to event #3035" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:06"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_10> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Malicious inbound communication twice" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin@admin.test" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T14:00"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_11> a :SecurityEventAction ;
+    :hasSecurityEventActivity "publish" ;
+    :hasSecurityEventDescription "Malicious inbound communication twice" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin@admin.test" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T13:59"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_12> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #3035: Payload delivery/email-dst test@email.com" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T13:54"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_13> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #3035: Payload delivery/email-subject suspicious" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T13:54"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_14> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Object from Event #3035: email" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T13:54"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_15> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #3035: Targeting data/target-user user1" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin@admin.test" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T13:19"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_16> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Malicious inbound communication twice" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin@admin.test" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T13:18"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_17> a :SecurityEventAction ;
+    :hasSecurityEventActivity "publish" ;
+    :hasSecurityEventDescription "Malicious inbound communication" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin@admin.test" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T13:17"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_18> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #3035: Network activity/ip-src 132.2.2.2" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T13:16"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/28792_3035_action_19> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Malicious inbound communication" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-04-29T13:15"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/sceurityanalysis/28792_6f2f50b1-3bc1-45e4-bfb4-71136fad08af> a :SecurityAnalysis ;
+    :hasSecurityAnalysisDataType "ip" ;
+    :hasSecurityAnalysisData "1.1.1.1" ;
+    :hasSecurityAnalysisReport "level=info, namespace=AbuseIPDB, predicate=Is Whitelist, value=True | level=info, namespace=AbuseIPDB, predicate=Usage Type, value=Content Delivery Network | level=safe, namespace=AbuseIPDB, predicate=Abuse Confidence Score, value=0 | level=info, namespace=AbuseIPDB, predicate=Records, value=57" ;
+    :hasSecurityAnalysisPerformer [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityAnalysisDateTime "2025-07-10T14:34"^^xsd:dateTime ;
+.

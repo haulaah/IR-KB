@@ -1,0 +1,353 @@
+@prefix : <http://irkb.com/ir-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@base <http://irkb.com/ir-ontology#> .
+
+<http://irkb.com/ir-ontology> rdf:type owl:Ontology ;
+                               dct:created "2025-06-17"^^xsd:date ;
+                               dct:creator "IRKB Team" ;
+                               dct:description "An ontology for modeling cybersecurity incident response processes, assets, communications, and analysis."@en ;
+                               dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+                               dct:title "Incident Response Ontology v2"@en ;
+                               rdfs:label "Incident Response Ontology"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+### Core Incident Classes
+:Incident rdf:type owl:Class ;
+          rdfs:label "Incident"@en ;
+          rdfs:comment "A security incident requiring investigation and response."@en .
+
+:SecurityEvent rdf:type owl:Class ;
+               rdfs:label "Security Event"@en ;
+               rdfs:comment "An observable security occurrence relevant to incident response."@en .
+
+:SecurityAnalysis rdf:type owl:Class ;
+                  rdfs:label "Security Analysis"@en ;
+                  rdfs:comment "Examination of security events to understand incidents."@en .
+
+### Response Workflow Classes
+:CourseOfAction rdf:type owl:Class ;
+                rdfs:label "Course of Action"@en ;
+                rdfs:comment "A planned response to a security incident."@en .
+
+:DetectionAndAnalysis rdf:type owl:Class ;
+                      rdfs:subClassOf :CourseOfAction ;
+                      rdfs:label "Detection and Analysis"@en ;
+                      rdfs:comment "Activities to identify and assess security incidents."@en .
+
+:Containment rdf:type owl:Class ;
+             rdfs:subClassOf :CourseOfAction ;
+             rdfs:label "Containment"@en ;
+             rdfs:comment "Actions to limit the scope of an incident."@en .
+
+:Eradication rdf:type owl:Class ;
+             rdfs:subClassOf :CourseOfAction ;
+             rdfs:label "Eradication"@en ;
+             rdfs:comment "Actions to remove threats from affected systems."@en .
+
+:Recovery rdf:type owl:Class ;
+          rdfs:subClassOf :CourseOfAction ;
+          rdfs:label "Recovery"@en ;
+          rdfs:comment "Actions to restore systems to normal operation."@en .
+
+:PostIncidentActivity rdf:type owl:Class ;
+                      rdfs:subClassOf :CourseOfAction ;
+                      rdfs:label "Post-Incident Activity"@en ;
+                      rdfs:comment "Activities conducted after incident resolution."@en .
+
+### Asset Classes
+:Asset rdf:type owl:Class ;
+       rdfs:label "Asset"@en ;
+       rdfs:comment "Any valuable system, device, or data requiring protection."@en .
+
+:Artefact rdf:type owl:Class ;
+          rdfs:subClassOf :Asset ;
+          rdfs:label "Artefact"@en ;
+          rdfs:comment "Digital evidence or forensic artefacts collected during incident response."@en .
+
+:Server rdf:type owl:Class ;
+        rdfs:subClassOf :Asset ;
+        rdfs:label "Server"@en ;
+        rdfs:comment "A server system that may be involved in security incidents."@en .
+
+:Workstation rdf:type owl:Class ;
+             rdfs:subClassOf :Asset ;
+             rdfs:label "Workstation"@en ;
+             rdfs:comment "An end-user computing device that may be involved in security incidents."@en .
+
+### Personnel Classes
+:Analyst rdf:type owl:Class ;
+         rdfs:label "Analyst"@en ;
+         rdfs:comment "A security professional who investigates and responds to incidents."@en .
+
+:Tier1 rdf:type owl:Class ;
+       rdfs:subClassOf :Analyst ;
+       rdfs:label "Tier 1 Analyst"@en ;
+       rdfs:comment "First responder performing initial triage."@en .
+
+:Tier2 rdf:type owl:Class ;
+       rdfs:subClassOf :Analyst ;
+       rdfs:label "Tier 2 Analyst"@en ;
+       rdfs:comment "Incident responder handling deeper investigation."@en .
+
+:Tier3 rdf:type owl:Class ;
+       rdfs:subClassOf :Analyst ;
+       rdfs:label "Tier 3 Analyst"@en ;
+       rdfs:comment "Senior analyst handling complex investigations."@en .
+
+:ResponderCommunication rdf:type owl:Class ;
+                        rdfs:label "Responder Communication"@en ;
+                        rdfs:comment "Communication between incident responders during an investigation."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+### Incident Relationships
+:hasAffectedAsset rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Incident ;
+                  rdfs:range :Asset ;
+                  rdfs:label "has affected asset"@en ;
+                  rdfs:comment "Links an incident to impacted assets."@en .
+
+:hasEvent rdf:type owl:ObjectProperty ;
+          rdfs:domain :Incident ;
+          rdfs:range :SecurityEvent ;
+          rdfs:label "has security event"@en ;
+          rdfs:comment "Connects an incident to its component security events."@en .
+
+:hasCoa rdf:type owl:ObjectProperty ;
+        rdfs:domain :Incident ;
+        rdfs:range :CourseOfAction ;
+        rdfs:label "has course of action"@en ;
+        rdfs:comment "Links an incident to response actions taken."@en .
+
+:hasArtefact rdf:type owl:ObjectProperty ;
+             rdfs:domain :Incident ;
+             rdfs:range :Artefact ;
+             rdfs:label "has artefact"@en ;
+             rdfs:comment "Links an incident to collected forensic artefacts."@en .
+
+### Analyst Relationships
+:hasConfirmationAnalyst rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Incident ;
+                        rdfs:range :Analyst ;
+                        rdfs:label "has confirmation analyst"@en ;
+                        rdfs:comment "The analyst who confirmed the incident."@en .
+
+:hasCoaCreationAnalyst rdf:type owl:ObjectProperty ;
+                       rdfs:domain :CourseOfAction ;
+                       rdfs:range :Analyst ;
+                       rdfs:label "has COA creation analyst"@en ;
+                       rdfs:comment "The analyst who created the course of action."@en .
+
+:hasCoaAssignedAnalyst rdf:type owl:ObjectProperty ;
+                      rdfs:domain :CourseOfAction ;
+                      rdfs:range :Analyst ;
+                      rdfs:label "has COA assigned analyst"@en ;
+                      rdfs:comment "The analyst responsible for executing the course of action."@en .
+
+:hasArtefactCreationAnalyst rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Artefact ;
+                           rdfs:range :Analyst ;
+                           rdfs:label "has artefact creation analyst"@en ;
+                           rdfs:comment "The analyst who collected or created the artefact."@en .
+
+### PROV-O Integration
+prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
+                   rdfs:domain :SecurityAnalysis ;
+                   rdfs:range :SecurityEvent ;
+                   rdfs:label "was generated by"@en ;
+                   rdfs:comment "Indicates analysis was generated from a security event."@en .
+
+prov:wasPerformedBy rdf:type owl:ObjectProperty ;
+                    rdfs:domain :SecurityEvent, :SecurityAnalysis ;
+                    rdfs:range :Analyst ;
+                    rdfs:label "was performed by"@en ;
+                    rdfs:comment "Indicates who performed the event or analysis."@en .
+
+prov:used rdf:type owl:ObjectProperty ;
+          rdfs:domain :CourseOfAction ;
+          rdfs:range :SecurityAnalysis ;
+          rdfs:label "used"@en ;
+          rdfs:comment "Indicates a course of action used security analysis."@en .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+### Incident Properties
+:hasIncidentId rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Incident ;
+               rdfs:range xsd:string ;
+               rdfs:label "has incident ID"@en ;
+               rdfs:comment "Unique identifier for an incident."@en .
+
+:hasIncidentName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Incident ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has incident name"@en ;
+                 rdfs:comment "Human-readable name for an incident."@en .
+
+:hasIncidentDescription rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Incident ;
+                        rdfs:range xsd:string ;
+                        rdfs:label "has incident description"@en ;
+                        rdfs:comment "Detailed description of an incident."@en .
+
+:hasIncidentSeverity rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Incident ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "has incident severity"@en ;
+                     rdfs:comment "Severity level (e.g., low, medium, high)."@en .
+
+:hasIncidentCreationDateTime rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Incident ;
+                            rdfs:range xsd:dateTime ;
+                            rdfs:label "has incident creation datetime"@en ;
+                            rdfs:comment "When the incident record was created."@en .
+
+:hasConfirmationDateTime rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Incident ;
+                         rdfs:range xsd:dateTime ;
+                         rdfs:label "has confirmation datetime"@en ;
+                         rdfs:comment "When the incident was confirmed."@en .
+
+:hasEndDateTime rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Incident ;
+                rdfs:range xsd:dateTime ;
+                rdfs:label "has end datetime"@en ;
+                rdfs:comment "When incident response concluded."@en .
+
+:hasIncidentStatus rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Incident ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "has incident status"@en ;
+                   rdfs:comment "Current status of the incident."@en .
+
+:hasIncidentStage rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Incident ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "has incident stage"@en ;
+                  rdfs:comment "Current stage in incident lifecycle."@en .
+
+### Course of Action Properties
+:hasCoaDescription rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :CourseOfAction ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "has COA description"@en ;
+                   rdfs:comment "Narrative description of the action."@en .
+
+:hasCoaStatus rdf:type owl:DatatypeProperty ;
+              rdfs:domain :CourseOfAction ;
+              rdfs:range xsd:string ;
+              rdfs:label "has COA status"@en ;
+              rdfs:comment "Execution status (e.g., pending, completed)."@en .
+
+:hasCoaCreationDateTime rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :CourseOfAction ;
+                        rdfs:range xsd:dateTime ;
+                        rdfs:label "has COA creation datetime"@en ;
+                        rdfs:comment "When the action was created."@en .
+
+:hasCoaStartDateTime rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :CourseOfAction ;
+                     rdfs:range xsd:dateTime ;
+                     rdfs:label "has COA start datetime"@en ;
+                     rdfs:comment "When the action was initiated."@en .
+
+:hasCoaEndDateTime rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :CourseOfAction ;
+                   rdfs:range xsd:dateTime ;
+                   rdfs:label "has COA end datetime"@en ;
+                   rdfs:comment "When the action was completed."@en .
+
+### Artefact Properties
+:hasArtefactType rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Artefact ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has artefact type"@en ;
+                 rdfs:comment "Classification of the artefact."@en .
+
+:hasArtefactDataValue rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Artefact ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "has artefact data value"@en ;
+                      rdfs:comment "The content or value of the artefact."@en .
+
+:hasArtefactCreationDateTime rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Artefact ;
+                            rdfs:range xsd:dateTime ;
+                            rdfs:label "has artefact creation datetime"@en ;
+                            rdfs:comment "When the artefact was collected."@en .
+
+### Security Event Properties
+:hasEventId rdf:type owl:DatatypeProperty ;
+            rdfs:domain :SecurityEvent ;
+            rdfs:range xsd:string ;
+            rdfs:label "has event ID"@en ;
+            rdfs:comment "Unique identifier for a security event."@en .
+
+:hasEventDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :SecurityEvent ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "has event description"@en ;
+                     rdfs:comment "Description of the security event."@en .
+
+:hasEventActivity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :SecurityEvent ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "has event activity"@en ;
+                  rdfs:comment "The action that occurred in the event."@en .
+
+:hasEventActivityDateTime rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :SecurityEvent ;
+                          rdfs:range xsd:dateTime ;
+                          rdfs:label "has event activity datetime"@en ;
+                          rdfs:comment "When the event activity occurred."@en .
+
+### Security Analysis Properties
+:hasSecurityAnalysisType rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :SecurityAnalysis ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "has security analysis type"@en ;
+                         rdfs:comment "Type of analysis performed."@en .
+
+:hasSecurityAnalysisDataValue rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :SecurityAnalysis ;
+                              rdfs:range xsd:string ;
+                              rdfs:label "has security analysis data value"@en ;
+                              rdfs:comment "The data value resulting from analysis."@en .
+
+:hasSecurityAnalysisDateTime rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :SecurityAnalysis ;
+                             rdfs:range xsd:dateTime ;
+                             rdfs:label "has security analysis datetime"@en ;
+                             rdfs:comment "When the analysis was performed."@en .
+
+:hasSecurityAnalysisDetails rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :SecurityAnalysis ;
+                            rdfs:range xsd:string ;
+                            rdfs:label "has security analysis details"@en ;
+                            rdfs:comment "Detailed findings from the analysis."@en .
+
+### Analyst Properties
+:hasAnalystId rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Analyst ;
+              rdfs:range xsd:string ;
+              rdfs:label "has analyst ID"@en ;
+              rdfs:comment "Unique identifier for an analyst."@en .
+
+:hasAnalystEmail rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Analyst ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has analyst email"@en ;
+                 rdfs:comment "Email address of the analyst."@en .
