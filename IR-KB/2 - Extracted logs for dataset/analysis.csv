@@ -1,2 +1,0 @@
-analyzerName,data,dataType,status,createdBy,createdAt,startDate,endDate,updatedAt,report
-AbuseIPDB_1_0,1.1.1.1,ip,Success,testuser2@irorg.com,2025-07-10 14:34:50,2025-07-10 14:34:50,2025-07-10 14:34:55,2025-07-10 14:34:55,"level=info, namespace=AbuseIPDB, predicate=Is Whitelist, value=True | level=info, namespace=AbuseIPDB, predicate=Usage Type, value=Content Delivery Network | level=safe, namespace=AbuseIPDB, predicate=Abuse Confidence Score, value=0 | level=info, namespace=AbuseIPDB, predicate=Records, value=57"
