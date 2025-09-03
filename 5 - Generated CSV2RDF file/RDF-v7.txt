@@ -1,0 +1,426 @@
+@prefix : <http://irkb.com/ir-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<http://irkb.com/ir-ontology/incident/8264> a :Incident ;
+    :hasIncidentId "8264" ;
+    :hasIncidentName "Phishing Incident targeting the Legal Department" ;
+    :hasIncidentDescription "Phishing incident targeting the Legal Department, specifically head.legal@my-internal-company.com. Malicious emails were sent from external actors posing as trusted senders with a fraudulent invoice-related subject line." ;
+    :hasIncidentSeverity "2" ;
+    :hasIncidentCreationDateTime "2025-08-27T13:35"^^xsd:dateTime ;
+    :hasConfirmationDateTime "2025-08-27T13:30"^^xsd:dateTime ;
+    :hasEndDateTime "2025-08-27T21:25"^^xsd:dateTime ;
+    :hasIncidentStatus "Resolved" ;
+    :hasIncidentStage "Closed" ;
+    :hasConfirmationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/8264_detection_1> ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/8264_containment_1> ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/8264_detection_2> ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/8264_detection_3> ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/8264_eradication_1> ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/8264_recovery_1> ;
+    :hasCoa <http://irkb.com/ir-ontology/courseofaction/8264_postincidentactivity_1> ;
+    :hasArtefact <http://irkb.com/ir-ontology/artefact/8264_artefact_1> ;
+    :hasArtefact <http://irkb.com/ir-ontology/artefact/8264_artefact_2> ;
+    :hasArtefact <http://irkb.com/ir-ontology/artefact/8264_artefact_3> ;
+    :hasArtefact <http://irkb.com/ir-ontology/artefact/8264_artefact_4> ;
+    :hasArtefact <http://irkb.com/ir-ontology/artefact/8264_artefact_5> ;
+    :hasArtefact <http://irkb.com/ir-ontology/artefact/8264_artefact_6> ;
+    :hasArtefact <http://irkb.com/ir-ontology/artefact/8264_artefact_7> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_1> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_2> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_3> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_4> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_5> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_6> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_7> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_8> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_9> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_10> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_11> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_12> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_13> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_14> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_15> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_16> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_17> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_18> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_19> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_20> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_21> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_22> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_23> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_24> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_25> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_26> ;
+    :hasSecurityAnalysis <http://irkb.com/ir-ontology/securityanalysis/8264_analysis_1> ;
+    :hasSecurityAnalysis <http://irkb.com/ir-ontology/securityanalysis/8264_analysis_2> ;
+    :hasSecurityAnalysis <http://irkb.com/ir-ontology/securityanalysis/8264_analysis_3> ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/8264_detection_1> a :CourseOfAction ;
+    a :Detection ;
+    :hasCoaDescription "Phishing Detection:  Emails identified from suspicious senders (mr@phisher-domain.com, mrs@phisher-domain.com) with targeted accounts (head.legal@my-internal-company.com)and the  email subject: 'Unable to complete invoice payment because of your unbalanced ToS' The sender IP 20.30.40.50 and phishing URLs (tytrrfgfg.weebly.com, veilig-90.lu-490.ru) and Track redirectors (lihi3.cc, reliancematrrix.com)." ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-08-27T14:34"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-08-27T13:35"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-08-27T17:55"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/8264_containment_1> a :CourseOfAction ;
+    a :Containment ;
+    :hasCoaDescription "Mitigate the attack’s effects:  Blocked malicious domains and IPs. Spread phishing URLs to partners. Alert affected users and communicate warnings internally." ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-08-27T17:39"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-08-27T17:49"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-08-27T19:11"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/8264_detection_2> a :CourseOfAction ;
+    a :Detection ;
+    :hasCoaDescription "Involve appropriate parties:  Notify legal, security, and compliance teams. Escalate to IR-ORG decision-makers immediately." ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-08-27T14:35"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-08-27T14:40"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-08-27T17:54"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/8264_detection_3> a :CourseOfAction ;
+    a :Detection ;
+    :hasCoaDescription "Collect evidence:  Preserve phishing emails, headers, and indicators. Captured screenshots of phishing sites and log sender IP traffic." ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-08-27T14:35"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-08-27T14:41"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-08-27T18:06"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/8264_eradication_1> a :CourseOfAction ;
+    a :Eradication ;
+    :hasCoaDescription "Stop the fraud  Requested takedown of phishing domains and redirectors. Report sender email infrastructure abuse." ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-08-27T17:40"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-08-27T17:53"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-08-27T19:13"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/8264_recovery_1> a :CourseOfAction ;
+    a :Recovery ;
+    :hasCoaDescription "Confirm phishing sites and redirectors are offline. Verify no further activity from sender IP. Remove temporary alerts once safe." ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-08-27T17:46"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-08-27T17:56"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-08-27T19:31"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/courseofaction/8264_postincidentactivity_1> a :CourseOfAction ;
+    a :PostIncidentActivity ;
+    :hasCoaDescription "Lessons Learned  Review detection and response effectiveness. Update escalation procedures. Improve phishing detection rules. Involve legal if action is needed." ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2025-08-27T17:48"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2025-08-27T19:13"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2025-08-27T21:17"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+.
+
+<http://irkb.com/ir-ontology/artefact/8264_artefact_1> a :Artefact ;
+    :hasArtefactType "url" ;
+    :hasArtefactDataValue "https://veilig-90.lu-490.ru/01/6.php" ;
+    :hasArtefactCreator [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2025-08-27T19:21"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/artefact/8264_artefact_2> a :Artefact ;
+    :hasArtefactType "url" ;
+    :hasArtefactDataValue "https://lihi3.cc/hxxI5" ;
+    :hasArtefactCreator [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2025-08-27T19:22"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/artefact/8264_artefact_3> a :Artefact ;
+    :hasArtefactType "url" ;
+    :hasArtefactDataValue "https://tytrrfgfg.weebly.com/" ;
+    :hasArtefactCreator [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2025-08-27T19:20"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/artefact/8264_artefact_4> a :Artefact ;
+    :hasArtefactType "url" ;
+    :hasArtefactDataValue "https://lihi3.cc/hxxI4" ;
+    :hasArtefactCreator [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2025-08-27T19:24"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/artefact/8264_artefact_5> a :Artefact ;
+    :hasArtefactType "ip" ;
+    :hasArtefactDataValue "20.30.40.50" ;
+    :hasArtefactCreator [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2025-08-27T19:19"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/artefact/8264_artefact_6> a :Artefact ;
+    :hasArtefactType "domain" ;
+    :hasArtefactDataValue "phisher-domain.com" ;
+    :hasArtefactCreator [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2025-08-27T19:26"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/artefact/8264_artefact_7> a :Artefact ;
+    :hasArtefactType "url" ;
+    :hasArtefactDataValue "http://reliancematrrix.com/" ;
+    :hasArtefactCreator [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2025-08-27T19:22"^^xsd:dateTime ;
+.
+
+<http://irkb.com/event/8264_4778> a :SecurityEvent ;
+    :hasEventTitle "Suspected Phishing Email Detected" ;
+    :hasSecurityEventId "4778" ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_1> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_2> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_3> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_4> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_5> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_6> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_7> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_8> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_9> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_10> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_11> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_12> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_13> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_14> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_15> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_16> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_17> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_18> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_19> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_20> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_21> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_22> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_23> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_24> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_25> ;
+    :hasSecurityEventAction <http://irkb.com/ir-ontology/securityevent/8264_4778_action_26> ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_1> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Suspected Phishing Email Detected" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:59:26" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_2> a :SecurityEventAction ;
+    :hasSecurityEventActivity "galaxy_local" ;
+    :hasSecurityEventDescription "Attached local galaxy cluster \"Spearphishing Link - T1566.002\" to attribute #7808396" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:28:20" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_3> a :SecurityEventAction ;
+    :hasSecurityEventActivity "publish" ;
+    :hasSecurityEventDescription "Suspected Phishing Email Detected" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:21:02" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_4> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Network activity/url http://reliancematrrix.com/" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:20:48" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_5> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Network activity/url https://lihi3.cc/hxxI5" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:20:40" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_6> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Network activity/url https://lihi3.cc/hxxI4" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:20:35" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_7> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/url https://veilig-90.lu-490.ru/01/6.php" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:20:25" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_8> a :SecurityEventAction ;
+    :hasSecurityEventActivity "edit" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/url https://tytrrfgfg.weebly.com/" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:20:02" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_9> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Network activity/url http://reliancematrrix.com/" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:17:54" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_10> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Network activity/url https://lihi3.cc/hxxI5" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:17:34" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_11> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Network activity/url https://lihi3.cc/hxxI4" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:16:29" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_12> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/url https://veilig-90.lu-490.ru/01/6.php" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:16:04" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_13> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/url https://tytrrfgfg.weebly.com/" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:15:50" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_14> a :SecurityEventAction ;
+    :hasSecurityEventActivity "tag" ;
+    :hasSecurityEventDescription "Attached global tag \"veris:action:social:variety=\"Phishing\"\" to event #4778" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:13:26" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_15> a :SecurityEventAction ;
+    :hasSecurityEventActivity "tag" ;
+    :hasSecurityEventDescription "Attached global tag \"ecsirt:fraud=\"phishing\"\" to event #4778" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:13:26" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_16> a :SecurityEventAction ;
+    :hasSecurityEventActivity "tag" ;
+    :hasSecurityEventDescription "Attached global tag \"circl:incident-classification=\"phishing\"\" to event #4778" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 13:13:26" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_17> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Network activity/ip-src 20.30.40.50" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:57:09" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_18> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Other/text Basic-Phishing-Kit-v0.1" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:57:09" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_19> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/email-src mr@phisher-domain.com" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:57:09" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_20> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/email-src-display-name MrPhisher" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:57:09" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_21> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/domain phisher-domain.com" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:57:09" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_22> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/email-dst-display-name Head of Legal Dpt." ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:57:09" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_23> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/email-dst head.legal@my-internal-company.com" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:57:09" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_24> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Attribute from Event #4778: Payload delivery/email-subject Unable to complete invoice payment because of your unbalanced ToS" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:57:09" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_25> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Object from Event #4778: email" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:57:09" ;
+.
+
+<http://irkb.com/ir-ontology/securityevent/8264_4778_action_26> a :SecurityEventAction ;
+    :hasSecurityEventActivity "add" ;
+    :hasSecurityEventDescription "Suspected Phishing Email Detected" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "admin2@irorg.com" ] ;
+    :hasSecurityEventActivityDateTime "2025-08-27 12:30:06" ;
+.
+
+<http://irkb.com/ir-ontology/securityanalysis/8264_analysis_1> a :SecurityAnalysis ;
+    :hasSecurityAnalysisDataType "url" ;
+    :hasSecurityAnalysisData "https://veilig-90.lu-490.ru/01/6.php" ;
+    :hasSecurityAnalysisReport "organization=IR-ORG | updatedAt=1756310464178 | tlp=2 | endDate=1756310464178 | data=https://veilig-90.lu-490.ru/01/6.php | workerDefinitionId=Urlscan_io_Search_0_1_1 | cacheTag=699b1283e3d1fd7b7a58022d1ce22ce4 | pap=2 | workerName=Urlscan_io_Search_0_1_1 | status=Success | createdAt=1756310456713 | createdBy=testuser2@irorg.com | workerId=ad2d431592dec846ed77e9a87e5ea77d | message= | dataType=url | type=analyzer | updatedBy=testuser2@irorg.com | startDate=1756310457091 | _type=job | _routing=lcZC7JgBo-JpgrChyY6R | _parent=None | _id=lcZC7JgBo-JpgrChyY6R | _seqNo=9 | _primaryTerm=13 | id=lcZC7JgBo-JpgrChyY6R | analyzerId=ad2d431592dec846ed77e9a87e5ea77d | analyzerName=Urlscan_io_Search_0_1_1 | analyzerDefinitionId=Urlscan_io_Search_0_1_1 | date=1756310456713 | report.summary.taxonomies.level=info | report.summary.taxonomies.namespace=urlscan.io | report.summary.taxonomies.predicate=Search | report.summary.taxonomies.value=0 result | report.full.type=url | report.full.query=\"https://veilig-90.lu-490.ru/01/6.php\" | report.full.service=get | report.full.indicator.total=0 | report.full.indicator.took=551 | report.full.indicator.has_more=False | report.success=True" ;
+    :hasSecurityAnalysisPerformer [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityAnalysisDateTime "2025-08-27T17:00"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityanalysis/8264_analysis_2> a :SecurityAnalysis ;
+    :hasSecurityAnalysisDataType "ip" ;
+    :hasSecurityAnalysisData "20.30.40.50" ;
+    :hasSecurityAnalysisReport "organization=IR-ORG | updatedAt=1756310125217 | tlp=2 | endDate=1756310125216 | data=20.30.40.50 | workerDefinitionId=Urlscan_io_Search_0_1_1 | cacheTag=aa01345d71081e2342c649a77e88d8bf | pap=2 | workerName=Urlscan_io_Search_0_1_1 | status=Success | createdAt=1756310107639 | createdBy=testuser2@irorg.com | workerId=ad2d431592dec846ed77e9a87e5ea77d | message= | dataType=ip | type=analyzer | updatedBy=testuser2@irorg.com | startDate=1756310108050 | _type=job | _routing=zMY97JgBo-JpgrChdo0k | _parent=None | _id=zMY97JgBo-JpgrChdo0k | _seqNo=11 | _primaryTerm=13 | id=zMY97JgBo-JpgrChdo0k | analyzerId=ad2d431592dec846ed77e9a87e5ea77d | analyzerName=Urlscan_io_Search_0_1_1 | analyzerDefinitionId=Urlscan_io_Search_0_1_1 | date=1756310107639 | report.summary.taxonomies.level=suspicious | report.summary.taxonomies.namespace=urlscan.io | report.summary.taxonomies.predicate=Search | report.summary.taxonomies.value=1 result | report.full.type=ip | report.full.query=20.30.40.50 | report.full.service=get | report.full.indicator.results.task.visibility=public | report.full.indicator.results.task.method=manual | report.full.indicator.results.task.domain=20.30.40.50 | report.full.indicator.results.task.time=2024-05-10T06:27:24.534Z | report.full.indicator.results.task.uuid=8ca5c4e0-c6af-4e1d-b1e6-7c5d6395eb7c | report.full.indicator.results.task.url=http://20.30.40.50/ | report.full.indicator.results.stats.uniqIPs=1 | report.full.indicator.results.stats.uniqCountries=0 | report.full.indicator.results.stats.dataLength=0 | report.full.indicator.results.stats.encodedDataLength=0 | report.full.indicator.results.stats.requests=1 | report.full.indicator.results.page.domain=20.30.40.50 | report.full.indicator.results.page.url=http://20.30.40.50/ | report.full.indicator.results._id=8ca5c4e0-c6af-4e1d-b1e6-7c5d6395eb7c | report.full.indicator.results._score=None | report.full.indicator.results.sort=1715322444534 | report.full.indicator.results.sort=8ca5c4e0-c6af-4e1d-b1e6-7c5d6395eb7c | report.full.indicator.results.result=https://urlscan.io/api/v1/result/8ca5c4e0-c6af-4e1d-b1e6-7c5d6395eb7c/ | report.full.indicator.results.screenshot=https://urlscan.io/screenshots/8ca5c4e0-c6af-4e1d-b1e6-7c5d6395eb7c.png | report.full.indicator.total=1 | report.full.indicator.took=268 | report.full.indicator.has_more=False | report.success=True" ;
+    :hasSecurityAnalysisPerformer [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityAnalysisDateTime "2025-08-27T16:55"^^xsd:dateTime ;
+.
+
+<http://irkb.com/ir-ontology/securityanalysis/8264_analysis_3> a :SecurityAnalysis ;
+    :hasSecurityAnalysisDataType "url" ;
+    :hasSecurityAnalysisData "https://tytrrfgfg.weebly.com/" ;
+    :hasSecurityAnalysisReport "organization=IR-ORG | updatedAt=1756310418883 | tlp=2 | endDate=1756310418883 | data=https://tytrrfgfg.weebly.com/ | workerDefinitionId=Urlscan_io_Search_0_1_1 | cacheTag=22cd50d3a82c7f0b3ef7fd98da4bef30 | pap=2 | workerName=Urlscan_io_Search_0_1_1 | status=Success | createdAt=1756310412446 | createdBy=testuser2@irorg.com | workerId=ad2d431592dec846ed77e9a87e5ea77d | message= | dataType=url | type=analyzer | updatedBy=testuser2@irorg.com | startDate=1756310412810 | _type=job | _routing=VMZC7JgBo-JpgrChHI6v | _parent=None | _id=VMZC7JgBo-JpgrChHI6v | _seqNo=5 | _primaryTerm=13 | id=VMZC7JgBo-JpgrChHI6v | analyzerId=ad2d431592dec846ed77e9a87e5ea77d | analyzerName=Urlscan_io_Search_0_1_1 | analyzerDefinitionId=Urlscan_io_Search_0_1_1 | date=1756310412446 | report.summary.taxonomies.level=info | report.summary.taxonomies.namespace=urlscan.io | report.summary.taxonomies.predicate=Search | report.summary.taxonomies.value=0 result | report.full.type=url | report.full.query=\"https://tytrrfgfg.weebly.com/\" | report.full.service=get | report.full.indicator.total=0 | report.full.indicator.took=1264 | report.full.indicator.has_more=False | report.success=True" ;
+    :hasSecurityAnalysisPerformer [ a :Analyst ; :hasAnalystEmail "testuser2@irorg.com" ] ;
+    :hasSecurityAnalysisDateTime "2025-08-27T17:00"^^xsd:dateTime ;
+.
+

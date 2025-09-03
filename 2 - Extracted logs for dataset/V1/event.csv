@@ -1,0 +1,21 @@
+created,user_id,user_email,org_name,action,model,model_title,event_id,title
+29/04/2025 14:39,5,admin2@irorg.com,IR-ORG,edit,Event,Malicious inbound communication twice once,3035,Malicious inbound communication twice once
+29/04/2025 14:38,5,admin2@irorg.com,IR-ORG,add,Attribute,Network activity/ip-src 1.1.1.1,3035,Attribute from Event #3035: Network activity/ip-src 1.1.1.1
+29/04/2025 14:20,5,admin2@irorg.com,IR-ORG,add,EventReport,test report 2,3035,test report 2
+29/04/2025 14:19,5,admin2@irorg.com,IR-ORG,soft_delete,Attribute,Targeting data/target-user user1,3035,Attribute from Event #3035: Targeting data/target-user user1
+29/04/2025 14:13,3,testuser2@irorg.com,IR-ORG,edit,Event,Malicious inbound communication twice once,3035,Malicious inbound communication twice once
+29/04/2025 14:09,3,testuser2@irorg.com,IR-ORG,add,EventReport,test report,3035,test report
+29/04/2025 14:09,3,testuser2@irorg.com,IR-ORG,tag,Attribute,INT-NETWORK,3035,"Attached global tag ""INT-NETWORK"" to attribute #3223378"
+29/04/2025 14:06,3,testuser2@irorg.com,IR-ORG,edit,Event,Malicious inbound communication twice,3035,Malicious inbound communication twice
+29/04/2025 14:06,3,testuser2@irorg.com,IR-ORG,tag,Event,source:OSINT,3035,"Attached global tag ""source:OSINT"" to event #3035"
+29/04/2025 14:00,1,admin@admin.test,Testing org,edit,Event,Malicious inbound communication twice,3035,Malicious inbound communication twice
+29/04/2025 13:59,1,admin@admin.test,Testing org,publish,Event,Malicious inbound communication twice,3035,Malicious inbound communication twice
+29/04/2025 13:54,3,testuser2@irorg.com,IR-ORG,add,Thread,,3035,
+29/04/2025 13:54,3,testuser2@irorg.com,IR-ORG,add,Attribute,Payload delivery/email-dst test@email.com,3035,Attribute from Event #3035: Payload delivery/email-dst test@email.com
+29/04/2025 13:54,3,testuser2@irorg.com,IR-ORG,add,Attribute,Payload delivery/email-subject suspicious,3035,Attribute from Event #3035: Payload delivery/email-subject suspicious
+29/04/2025 13:54,3,testuser2@irorg.com,IR-ORG,add,Object,email,3035,Object from Event #3035: email
+29/04/2025 13:19,1,admin@admin.test,Testing org,add,Attribute,Targeting data/target-user user1,3035,Attribute from Event #3035: Targeting data/target-user user1
+29/04/2025 13:18,1,admin@admin.test,Testing org,edit,Event,Malicious inbound communication twice,3035,Malicious inbound communication twice
+29/04/2025 13:17,1,admin@admin.test,Testing org,publish,Event,Malicious inbound communication,3035,Malicious inbound communication
+29/04/2025 13:16,3,testuser2@irorg.com,IR-ORG,add,Attribute,Network activity/ip-src 132.2.2.2,3035,Attribute from Event #3035: Network activity/ip-src 132.2.2.2
+29/04/2025 13:15,3,testuser2@irorg.com,IR-ORG,add,Event,Malicious inbound communication,3035,Malicious inbound communication
