@@ -1,0 +1,659 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:ir="https://haulaah.github.io/CIRPO#"
+    xml:base="https://haulaah.github.io/CIRPO">
+
+  <owl:Ontology rdf:about="https://haulaah.github.io/CIRPO">
+    <dct:title>Cyber Incident Response Process Ontology (CIRPO)</dct:title>
+    <dct:description>An ontology for modeling cybersecurity incident response processes</dct:description>
+    <dct:creator>Haula Galadima, Cormac Doherty, Rob Brennan</dct:creator>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-06-01</dct:created>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <owl:versionInfo>1.0</owl:versionInfo>
+  </owl:Ontology>
+
+  
+  <!-- CLASSES -->
+
+
+  <!-- The main Incident class represents a cybersecurity incident that requires a response. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Incident">
+    <rdfs:label>Incident</rdfs:label>
+    <rdfs:comment>A security incident that requires investigation and response.</rdfs:comment>
+  </owl:Class>
+
+  <!-- Artefact represents observables collected ina an incident. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Artefact">
+    <rdfs:label>Artefact</rdfs:label>
+    <rdfs:comment>An observable piece of evidence collected from an incident.</rdfs:comment>
+  </owl:Class>
+
+  <!-- CourseOfAction is the parent class for all response activities taken during an incident. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#CourseOfAction">
+    <rdfs:label>Course of Action</rdfs:label>
+    <rdfs:comment>A planned response action to a security incident.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:Detection is the initial phase of identifying security incidents. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Detection">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>Detection</rdfs:label>
+    <rdfs:comment>Activities in detection of security incidents.</rdfs:comment>
+  </owl:Class>
+
+ <!-- COA:Analysis of security incidents. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Analysis">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>Analysis</rdfs:label>
+    <rdfs:comment>Activities to assess security incidents.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:Containment involves actions to limit the impact and spread of an incident. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Containment">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>Containment</rdfs:label>
+    <rdfs:comment>Actions to limit the spread and impact of an incident.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:Eradication focuses on removing the root cause of the incident from affected systems. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Eradication">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>Eradication</rdfs:label>
+    <rdfs:comment>Actions to remove threats and root causes from affected systems.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:Recovery involves restoring systems and services to normal operation after an incident. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Recovery">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>Recovery</rdfs:label>
+    <rdfs:comment>Actions to restore systems to normal operation.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:PostIncidentActivity covers lessons learned and reporting after incident resolution. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#PostIncidentActivity">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>Post-Incident Activity</rdfs:label>
+    <rdfs:comment>Activities conducted after incident resolution (e.g., lessons learned, reporting).</rdfs:comment>
+  </owl:Class>
+
+  <!-- Analyst represents the security professionals who investigate and respond to incidents. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Analyst">
+    <rdfs:label>Analyst</rdfs:label>
+    <rdfs:comment>A security analyst who investigates and responds to incidents.</rdfs:comment>
+  </owl:Class>
+
+  <!-- Tier1 analysts are first responders performing initial triage and categorization. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Tier1">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>Tier 1</rdfs:label>
+    <rdfs:comment>First responder performing initial triage and categorization.</rdfs:comment>
+  </owl:Class>
+
+  <!-- Tier2 analysts handle incident response. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Tier2">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>Tier 2</rdfs:label>
+    <rdfs:comment>Incident responder handling deeper investigation and analysis.</rdfs:comment>
+  </owl:Class>
+
+  <!-- Tier3 analysts are senior experts handling complex investigations and threat hunting. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#Tier3">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>Tier 3</rdfs:label>
+    <rdfs:comment>Senior analyst or subject matter expert handling complex investigations.</rdfs:comment>
+  </owl:Class>
+
+  <!-- SecurityEvent represents alerts or occurrences detected by security monitoring systems. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#SecurityEvent">
+    <rdfs:label>Security Event</rdfs:label>
+    <rdfs:comment>An observable occurrence relevant to system security (e.g., alert from SIEM, IDS).</rdfs:comment>
+  </owl:Class>
+
+  <!-- SecurityEventAction represents specific actions taken within or in response to a security event. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#SecurityEventAction">
+    <rdfs:subClassOf rdf:resource="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+    <rdfs:label>Security Event Action</rdfs:label>
+    <rdfs:comment>A specific action taken or observed within a security event.</rdfs:comment>
+  </owl:Class>
+
+  <!-- SecurityAnalysis represents the analysis performed on observables. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#SecurityAnalysis">
+    <rdfs:label>Security Analysis</rdfs:label>
+    <rdfs:comment>The analysis of observables from security events leading to an incident</rdfs:comment>
+  </owl:Class>
+
+  <!-- ResponderCommunication represents communication between responders. -->
+  <owl:Class rdf:about="https://haulaah.github.io/CIRPO#ResponderCommunication">
+    <rdfs:label>Responder Communication</rdfs:label>
+    <rdfs:comment>Communication between incident responders during an investigation.</rdfs:comment>
+  </owl:Class>
+
+ 
+  <!-- DISJOINT CLASSES -->
+  
+
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#Incident"/>
+      <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#Artefact"/>
+      <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+      <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#Analyst"/>
+      <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+      <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+      <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#ResponderCommunication"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+
+
+  <!-- OBJECT PROPERTIES -->
+
+
+  <!-- Incident Properties -->
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasEvent">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+    <rdfs:label>has event</rdfs:label>
+    <rdfs:comment>Links an incident to one or more related security events that triggered or are part of it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#isEventOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasArtefact">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Artefact"/>
+    <rdfs:label>has artefact</rdfs:label>
+    <rdfs:comment>Links an incident to related artefacts/observables collected during the investigation.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#isArtefactOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasCoa">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>has course of action</rdfs:label>
+    <rdfs:comment>Links an incident to the response actions (COA) taken to resolve it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#isCoaOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasAnalysis">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:label>has analysis</rdfs:label>
+    <rdfs:comment>Links an incident to the security analyses performed on it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#isAnalysisOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasConfirmationAnalyst">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>has confirmation analyst</rdfs:label>
+    <rdfs:comment>Links an incident to the analyst who confirmed it as a genuine security incident.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#confirmedIncident"/>
+  </owl:ObjectProperty>
+
+  <!-- Course of Action Properties -->
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasCoaCreationAnalyst">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>has COA creation analyst</rdfs:label>
+    <rdfs:comment>Links a course of action to the analyst who created or planned it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#createdCoa"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasCoaAssignedAnalyst">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>has COA assigned analyst</rdfs:label>
+    <rdfs:comment>Links a course of action to the analyst responsible for executing it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#assignedToCoa"/>
+  </owl:ObjectProperty>
+
+  <!-- Artefact Properties -->
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasArtefactCreationAnalyst">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Artefact"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>has artefact creation analyst</rdfs:label>
+    <rdfs:comment>Links an artefact to the analyst who collected, created, or documented it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#createdArtefact"/>
+  </owl:ObjectProperty>
+
+  <!-- Security Analysis Properties -->
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasAnalysisPerformingAnalyst">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>has analysis performing analyst</rdfs:label>
+    <rdfs:comment>Links a security analysis to the analyst who performed it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#performedAnalysis"/>
+  </owl:ObjectProperty>
+
+  <!-- ResponderCommunication Properties -->
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasChatAnalyst">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#ResponderCommunication"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>has chat analyst</rdfs:label>
+    <rdfs:comment>Links a communication to the analyst who made the chat.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#generatedChat"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#pertainsToIncident">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#ResponderCommunication"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:label>pertains to incident</rdfs:label>
+    <rdfs:comment>Links a chat to the incident it discusses.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#hasPertainingChat"/>
+  </owl:ObjectProperty>
+
+
+  <!-- PROV-O MAPPINGS -->
+  
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+    <rdfs:label>was generated by</rdfs:label>
+    <rdfs:comment>Indicates the security event that generated this analysis</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#generated"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasPerformedBy">
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>was performed by</rdfs:label>
+    <rdfs:comment>Indicates the analyst who performed this activity</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#performed"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:label>was associated with</rdfs:label>
+    <rdfs:comment>Indicates association with an incident</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#Analyst"/>
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#Artefact"/>
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#hadAssociatedEntity"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#used">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:label>used</rdfs:label>
+    <rdfs:comment>Indicates that a course of action used specific analysis</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://haulaah.github.io/CIRPO#wasUsedBy"/>
+  </owl:ObjectProperty>
+
+  
+  <!-- INVERSE PROPERTIES (For Custom Relationships) -->
+  
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#isEventOf">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:label>is event of</rdfs:label>
+    <rdfs:comment>Inverse of hasEvent. Links a security event back to its parent incident.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#isArtefactOf">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Artefact"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:label>is artefact of</rdfs:label>
+    <rdfs:comment>Inverse of hasArtefact. Links an artefact back to its incident.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#isCoaOf">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:label>is COA of</rdfs:label>
+    <rdfs:comment>Inverse of hasCoa. Links a course of action back to its incident.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#isAnalysisOf">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:label>is analysis of</rdfs:label>
+    <rdfs:comment>Inverse of hasAnalysis. Links an analysis back to its incident.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#confirmedIncident">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:label>confirmed incident</rdfs:label>
+    <rdfs:comment>Inverse of hasConfirmationAnalyst. Links an analyst to the incidents they confirmed.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#createdCoa">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>created COA</rdfs:label>
+    <rdfs:comment>Inverse of hasCoaCreationAnalyst. Links an analyst to the courses of action they created.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#assignedToCoa">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>assigned to COA</rdfs:label>
+    <rdfs:comment>Inverse of hasCoaAssignedAnalyst. Links an analyst to the courses of action they are assigned to execute.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#createdArtefact">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#Artefact"/>
+    <rdfs:label>created artefact</rdfs:label>
+    <rdfs:comment>Inverse of hasArtefactCreationAnalyst. Links an analyst to the artefacts they created.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#performedAnalysis">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:label>performed analysis</rdfs:label>
+    <rdfs:comment>Inverse of hasAnalysisPerformingAnalyst. Links an analyst to the analyses they performed.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#generatedChat">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#ResponderCommunication"/>
+    <rdfs:label>generated chat</rdfs:label>
+    <rdfs:comment>Inverse of hasChatAnalyst. Links an analyst to the chat they generated.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hasPertainingChat">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#ResponderCommunication"/>
+    <rdfs:label>has pertaining chat</rdfs:label>
+    <rdfs:comment>Inverse of pertainsToIncident. Links an incident to a chat about it.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+  <!-- INVERSE PROPERTIES (For PROV-O Relationships) -->
+  
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#generated">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:label>generated</rdfs:label>
+    <rdfs:comment>Inverse of prov:wasGeneratedBy. Indicates a security event generated an analysis.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#performed">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:label>performed</rdfs:label>
+    <rdfs:comment>Inverse of prov:wasPerformedBy. Indicates an analyst performed an activity.</rdfs:comment>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#hadAssociatedEntity">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:label>had associated entity</rdfs:label>
+    <rdfs:comment>Inverse of prov:wasAssociatedWith. Indicates an incident had an associated entity.</rdfs:comment>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#Analyst"/>
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#Artefact"/>
+          <rdf:Description rdf:about="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://haulaah.github.io/CIRPO#wasUsedBy">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:label>was used by</rdfs:label>
+    <rdfs:comment>Inverse of prov:used. Indicates an analysis was used by a course of action.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+
+
+  <!-- DATA PROPERTIES -->
+
+
+  <!-- Artefact Properties -->
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasArtefactCreationDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Artefact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has artefact creation datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the artefact was collected.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasArtefactType">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Artefact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has artefact type</rdfs:label>
+    <rdfs:comment>Classification of the artefact.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasArtefactDataValue">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Artefact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has artefact data value</rdfs:label>
+    <rdfs:comment>The actual content or value of the artefact .</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Course of Action Properties -->
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasCoaCreationDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has COA creation datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the course of action was created.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasCoaDescription">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has COA description</rdfs:label>
+    <rdfs:comment>Narrative description of the course of action and its intended effect.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasCoaStatus">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has COA status</rdfs:label>
+    <rdfs:comment>Current execution status of the course of action.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasCoaStartDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has COA start datetime</rdfs:label>
+    <rdfs:comment>Timestamp when execution of the course of action was initiated.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+ <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasCoaEndDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has COA end datetime</rdfs:label>
+    <rdfs:comment>Timestamp when execution of the course of action was completed.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Incident Properties -->
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasIncidentId">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident ID</rdfs:label>
+    <rdfs:comment>Unique identifier for an incident.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasIncidentSeverity">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident severity</rdfs:label>
+    <rdfs:comment>The severity level of an incident (Low, Medium, High, Critical).</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasConfirmationDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has confirmation datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the incident was confirmed</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasIncidentDescription">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident description</rdfs:label>
+    <rdfs:comment>Detailed description of an incident. </rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasEndDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has end datetime</rdfs:label>
+    <rdfs:comment>Timestamp when incident response was formally concluded.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasIncidentName">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident name</rdfs:label>
+    <rdfs:comment>Title of the incident.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasIncidentCreationDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has incident creation datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the incident record was first created.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasIncidentStage">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident stage</rdfs:label>
+    <rdfs:comment>Current stage in the incident lifecycle.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasIncidentStatus">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident status</rdfs:label>
+    <rdfs:comment>Current status of the incident.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Analyst Properties -->
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasAnalystId">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has analyst ID</rdfs:label>
+    <rdfs:comment>Unique identifier for an analyst.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasAnalystEmail">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#Analyst"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has analyst email</rdfs:label>
+    <rdfs:comment>Email address of the analyst.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Security Event Properties -->
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasEventId">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has event ID</rdfs:label>
+    <rdfs:comment>Unique identifier for a security event.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasEventTitle">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has event title</rdfs:label>
+    <rdfs:comment>Short description or name for the security event.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+<!-- Event Action Properties -->
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasEventDescription">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityEventAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has event description</rdfs:label>
+    <rdfs:comment>Detailed description of the security event.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasEventActivity">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityEventAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has event activity</rdfs:label>
+    <rdfs:comment>Description of the specific activity within a security event.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasEventActivityDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityEventAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has event activity datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the specific security event activity occurred.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Security Analysis Properties -->
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasSecurityAnalysisType">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has security analysis data type</rdfs:label>
+    <rdfs:comment>The type of analysis performed.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasSecurityAnalysisDataValue">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has security analysis data value</rdfs:label>
+    <rdfs:comment>The data value to be analysed.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasSecurityAnalysisDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has security analysis datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the security analysis was performed.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasSecurityAnalysisDetails">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has security analysis details</rdfs:label>
+    <rdfs:comment>Detailed findings from the analysis.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Responder Communication Properties -->
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasChatMessage">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#ResponderCommunication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has chat message</rdfs:label>
+    <rdfs:comment>The content or body of the communication message.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasChatMessageDateTime">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#ResponderCommunication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has chat message datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the communication occurred.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://haulaah.github.io/CIRPO#hasChatSentiment">
+    <rdfs:domain rdf:resource="https://haulaah.github.io/CIRPO#ResponderCommunication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has chat sentiment</rdfs:label>
+    <rdfs:comment>The sentiment or tone of the communication.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+</rdf:RDF>
