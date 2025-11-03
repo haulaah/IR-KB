@@ -12,4 +12,4 @@ If you use this data, please cite our paper:
 
 H. S. Galadima, C. Doherty, and R. Brennan,
 "Semantic Log Aggregation for a Machine Readable Knowledge Base of Incident Response Activities"
-*publicaion in  progress*
+*publication in  progress*
