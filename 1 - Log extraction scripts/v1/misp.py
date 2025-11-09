@@ -3,7 +3,7 @@ import csv
 
 # === Configuration ===
 MISP_URL = "http://localhost:8080"
-API_KEY = "eR3pmNjAct0fhdAhIxFF4UOrrlEOvjkGFGaTVjO8"
+API_KEY = "#######################"
 EVENT_ID = 3035
 CSV_FILE = f"audit_logs_event_{EVENT_ID}.csv"
 
@@ -62,3 +62,4 @@ with open(CSV_FILE, "w", newline="", encoding="utf-8") as f:
     writer.writerows(output_rows)
 
 print(f" Exported {len(output_rows)} audit log entries to: {CSV_FILE}")
+
