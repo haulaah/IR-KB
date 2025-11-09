@@ -3,7 +3,7 @@ import csv
 from datetime import datetime
 
 # === Configuration ===
-API_KEY = "iOFZcVonA1FjdrFlwthnhpNhbOrhr6q7"
+API_KEY = "#######################"
 CORTEX_URL = "http://localhost:9001/api/job/0c2L9JcB0IBvl8ZzxL_6/report"
 OUTPUT_FILE = "cortexexports.csv"
 
@@ -66,3 +66,4 @@ with open(OUTPUT_FILE, "w", newline='', encoding='utf-8') as csvfile:
     })
 
 print(f"Exported job report to '{OUTPUT_FILE}'")
+
