@@ -7,8 +7,8 @@ from requests.auth import HTTPBasicAuth
 # TheHive API Configuration
 HIVE_URL = "http://localhost:9000"
 CASE_ID = "~8264"
-USERNAME = "admin2@irorg.com"
-PASSWORD = "KinPass&01"
+USERNAME = "#######################"
+PASSWORD = "#######################"
 OUTPUT_FILE = "case.csv"
 
 auth = HTTPBasicAuth(USERNAME, PASSWORD)
