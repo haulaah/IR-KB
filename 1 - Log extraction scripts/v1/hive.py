@@ -7,8 +7,8 @@ from requests.auth import HTTPBasicAuth
 # === Configuration ===
 HIVE_URL = "http://localhost:9000"
 CASE_ID = "~28792"
-USERNAME = "admin2@irorg.com"
-PASSWORD = "KinPass&01"
+USERNAME = "#######################"
+PASSWORD = "#######################"
 OUTPUT_CSV_FILE = "caseexport.csv"
 
 auth = HTTPBasicAuth(USERNAME, PASSWORD)
@@ -141,3 +141,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
