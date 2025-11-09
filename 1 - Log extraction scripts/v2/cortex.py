@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 # Cortex API Configuration
-API_KEY = "iOFZcVonA1FjdrFlwthnhpNhbOrhr6q7"
+API_KEY = "#######################"
 CORTEX_URL = "http://localhost:9001/api"
 OUTPUT_FILE = "analysis.csv"
 
