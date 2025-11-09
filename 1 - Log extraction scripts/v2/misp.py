@@ -4,7 +4,7 @@ import csv
 
 # MISP API Configuration
 MISP_URL = "http://localhost:8080"
-API_KEY = "eR3pmNjAct0fhdAhIxFF4UOrrlEOvjkGFGaTVjO8"
+API_KEY = "#######################"
 EVENT_ID = 4778
 OUTPUT_FILE = f"event.csv"
 
