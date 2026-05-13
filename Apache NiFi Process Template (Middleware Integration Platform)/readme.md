@@ -1,6 +1,6 @@
-# Apache NiFi Process Template — Middleware Integration Platform
+# Apache NiFi Process
 
-An Apache NiFi workflow template designed to automate the transformation and loading of structured datasets into a semantic knowledge graph environment.
+An Apache NiFi workflow template designed to automate the transformation and loading of the IR log datasets into a Knowledge Graph.
 
 The workflow ingests CSV datasets, transforms them into RDF/Turtle format using ontology mappings, and loads the generated semantic data into Ontotext GraphDB.
 
@@ -9,10 +9,9 @@ The workflow ingests CSV datasets, transforms them into RDF/Turtle format using 
 The NiFi pipeline automates the following tasks:
 
 1. CSV dataset ingestion
-2. CSV to RDF/Turtle transformation
-3. Ontology-based semantic mapping
-4. RDF data loading into Ontotext GraphDB
-5. Logging, monitoring, and debugging of workflow execution
+2. CSV to RDF/Turtle transformation using ontology based semantic mapping
+3. RDF data loading into Ontotext GraphDB
+4. Logging, monitoring, and debugging of workflow execution
 
 ## Pipeline Architecture
 
