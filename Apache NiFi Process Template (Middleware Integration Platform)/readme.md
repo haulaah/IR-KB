@@ -28,7 +28,7 @@ The workflow consists of the following Apache NiFi processors:
 
 ## Data Flow
 
-![NiFi Workflow](NiFiProcessPipeline.png)
+![NiFi Workflow](NifiProcessPipeline.png)
 
 
 ```text
