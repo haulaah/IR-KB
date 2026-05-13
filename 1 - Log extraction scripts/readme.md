@@ -1,6 +1,6 @@
-# IR Log Extraction Script for TheHive, MISP, Cortex, and Mattermost
+# IR Log Extraction Script
 
-Python script that extracts IR logs from:
+Python script that extracts IR logs from SOC/CSIRT toolset:
 
 - TheHive
 - MISP
@@ -8,3 +8,5 @@ Python script that extracts IR logs from:
 - Mattermost
 
 The script consolidates the collected data into a unified CSV dataset.
+
+Latest version:  v4
