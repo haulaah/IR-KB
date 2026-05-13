@@ -28,6 +28,9 @@ The workflow consists of the following Apache NiFi processors:
 
 ## Data Flow
 
+![NiFi Workflow](NiFiProcessPipeline.png)
+
+
 ```text
 CSV Dataset
      ↓
@@ -42,3 +45,5 @@ UpdateAttribute
 InvokeHTTP
      ↓
 Ontotext GraphDB
+
+
