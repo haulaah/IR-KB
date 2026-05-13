@@ -1,4 +1,4 @@
-# Incident Response Machine-Readable Knowledge Base - IR-KB
+# Cyber Incident Response Machine-Readable Knowledge Base 
 
 A prototype for Semantic Log Aggregation for a Machine Readable Knowledge Base of Cyber Incident Response Activities and Communication Data
 
