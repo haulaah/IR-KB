@@ -1,0 +1,268 @@
+@prefix : <https://haulaah.github.io/CIRPO#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://haulaah.github.io/CIRPO/incident/4100288> a :Incident ;
+    :hasIncidentId "4100288" ;
+    :hasIncidentName "Ransomware Incident" ;
+    :hasIncidentDescription "Ransomware incident" ;
+    :hasIncidentSeverity "4" ;
+    :hasIncidentCreationDateTime "2026-02-24T14:39"^^xsd:dateTime ;
+    :hasConfirmationDateTime "2026-02-24T14:39"^^xsd:dateTime ;
+    :hasEndDateTime "2026-02-24T15:31"^^xsd:dateTime ;
+    :hasIncidentStatus "Resolved" ;
+    :hasIncidentStage "Closed" ;
+    :hasConfirmationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasCoa <https://haulaah.github.io/CIRPO/courseofaction/4100288_containment_1> ;
+    :hasCoa <https://haulaah.github.io/CIRPO/courseofaction/4100288_detection_1> ;
+    :hasCoa <https://haulaah.github.io/CIRPO/courseofaction/4100288_analysis_1> ;
+    :hasCoa <https://haulaah.github.io/CIRPO/courseofaction/4100288_postincidentactivity_1> ;
+    :hasCoa <https://haulaah.github.io/CIRPO/courseofaction/4100288_eradication_1> ;
+    :hasCoa <https://haulaah.github.io/CIRPO/courseofaction/4100288_recovery_1> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_1> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_2> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_3> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_4> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_5> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_6> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_7> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_8> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_9> ;
+    :hasArtefact <https://haulaah.github.io/CIRPO/artefact/4100288_artefact_10> ;
+    :hasEvent <https://haulaah.github.io/CIRPO/securityeventaction/4100288_1866_action_1> ;
+    :hasEvent <https://haulaah.github.io/CIRPO/securityeventaction/4100288_1866_action_2> ;
+    :hasAnalysis <https://haulaah.github.io/CIRPO/securityanalysis/4100288_analysis_1> ;
+    :hasAnalysis <https://haulaah.github.io/CIRPO/securityanalysis/4100288_analysis_2> ;
+    :hasAnalysis <https://haulaah.github.io/CIRPO/securityanalysis/4100288_analysis_3> ;
+    :hasChannel <https://haulaah.github.io/CIRPO/chatchannel/4100288_bm1ashmcjpbzf8py5gsdncj48e> ;
+.
+
+<https://haulaah.github.io/CIRPO/courseofaction/4100288_containment_1> a :CourseOfAction ;
+    a :Containment ;
+    :hasCoaDescription "=== TASK ACTIVITY HISTORY ===  --- LOG ENTRY --- ID: ~3952712 Author: responder5@irorg.com Date: 24/02/2026 15:14 Type: case_task_log Message: Block domains on web gateway, block Ip's on Firewall, Use AV to Isolate hosts, Scan network and devices until clear" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2026-02-24T14:41"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2026-02-24T15:12"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2026-02-24T15:15"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+.
+
+<https://haulaah.github.io/CIRPO/courseofaction/4100288_detection_1> a :CourseOfAction ;
+    a :Detection ;
+    :hasCoaDescription "=== TASK ACTIVITY HISTORY ===  --- LOG ENTRY --- ID: ~4120768 Author: responder5@irorg.com Date: 24/02/2026 15:00 Type: case_task_log Message: Confirmed connection to beacon server" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2026-02-24T14:40"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2026-02-24T14:59"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2026-02-24T15:00"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+.
+
+<https://haulaah.github.io/CIRPO/courseofaction/4100288_analysis_1> a :CourseOfAction ;
+    a :Analysis ;
+    :hasCoaDescription "=== TASK ACTIVITY HISTORY ===  --- LOG ENTRY --- ID: ~8204296 Author: responder5@irorg.com Date: 24/02/2026 15:12 Type: case_task_log Message: Used cortex to determine Domains, Ip's are reported as malicous" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2026-02-24T14:40"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2026-02-24T15:01"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2026-02-24T15:12"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+.
+
+<https://haulaah.github.io/CIRPO/courseofaction/4100288_postincidentactivity_1> a :CourseOfAction ;
+    a :PostIncidentActivity ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2026-02-24T14:41"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2026-02-24T15:30"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2026-02-24T15:31"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+.
+
+<https://haulaah.github.io/CIRPO/courseofaction/4100288_eradication_1> a :CourseOfAction ;
+    a :Eradication ;
+    :hasCoaDescription "=== TASK ACTIVITY HISTORY ===  --- LOG ENTRY --- ID: ~8212488 Author: responder5@irorg.com Date: 24/02/2026 15:18 Type: case_task_log Message: Delete beaconing files from host, possibly rebuild host depending on behaviour of malware" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2026-02-24T14:41"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2026-02-24T15:16"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2026-02-24T15:18"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+.
+
+<https://haulaah.github.io/CIRPO/courseofaction/4100288_recovery_1> a :CourseOfAction ;
+    a :Recovery ;
+    :hasCoaDescription "=== TASK ACTIVITY HISTORY ===  --- LOG ENTRY --- ID: ~8216584 Author: responder5@irorg.com Date: 24/02/2026 15:30 Type: case_task_log Message: Bring hosts back online" ;
+    :hasCoaStatus "Completed" ;
+    :hasCoaCreationDateTime "2026-02-24T14:41"^^xsd:dateTime ;
+    :hasCoaStartDateTime "2026-02-24T15:29"^^xsd:dateTime ;
+    :hasCoaEndDateTime "2026-02-24T15:30"^^xsd:dateTime ;
+    :hasCoaCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasCoaAssignedAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_1> a :Artefact ;
+    :hasArtefactType "hash" ;
+    :hasArtefactDataValue "52a1ca4e65a99f997db0314add8c3b84c6f25" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:50"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_2> a :Artefact ;
+    :hasArtefactType "hash" ;
+    :hasArtefactDataValue "bd7bfae5915ee878f1f650324f07b5f567a29" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:50"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_3> a :Artefact ;
+    :hasArtefactType "hash" ;
+    :hasArtefactDataValue "7a3f8439834654e39d8268c5f0e" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:50"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_4> a :Artefact ;
+    :hasArtefactType "hash" ;
+    :hasArtefactDataValue "7844eda73ae6e5debce6abc2bd4" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:50"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_5> a :Artefact ;
+    :hasArtefactType "hostname" ;
+    :hasArtefactDataValue "ws-user03.irorg.local" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:52"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_6> a :Artefact ;
+    :hasArtefactType "hostname" ;
+    :hasArtefactDataValue "dc01.irorg.local" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:53"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_7> a :Artefact ;
+    :hasArtefactType "hostname" ;
+    :hasArtefactDataValue "ws-user04.irorg.local" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:52"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_8> a :Artefact ;
+    :hasArtefactType "hostname" ;
+    :hasArtefactDataValue "srv-web01.irorg.local" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:52"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_9> a :Artefact ;
+    :hasArtefactType "hostname" ;
+    :hasArtefactDataValue "srv-backup01.irorg.local" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:53"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/artefact/4100288_artefact_10> a :Artefact ;
+    :hasArtefactType "domain" ;
+    :hasArtefactDataValue "chishir.com" ;
+    :hasArtefactCreationAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasArtefactCreationDateTime "2026-02-24T14:47"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/securityevent/4100288_1866> a :SecurityEvent ;
+    :hasEventTitle "Attribute from Event #1866: Network activity/domain servicewikii.com" ;
+    :hasEventId "1866" ;
+    :hasEvent <https://haulaah.github.io/CIRPO/securityeventaction/4100288_1866_action_1> ;
+    :hasEvent <https://haulaah.github.io/CIRPO/securityeventaction/4100288_1866_action_2> ;
+.
+
+<https://haulaah.github.io/CIRPO/securityeventaction/4100288_1866_action_1> a :SecurityEventAction ;
+    :hasEventActivity "add" ;
+    :hasEventDescription "Attribute from Event #1866: Network activity/domain servicewikii.com" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasEventActivityDateTime "2026-02-24T15:43:45"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/securityeventaction/4100288_1866_action_2> a :SecurityEventAction ;
+    :hasEventActivity "add" ;
+    :hasEventDescription "Ransomware" ;
+    prov:wasPerformedBy [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasEventActivityDateTime "2026-02-24T15:36:34"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/securityanalysis/4100288_analysis_1> a :SecurityAnalysis ;
+    :hasSecurityAnalysisType "domain" ;
+    :hasSecurityAnalysisDataValue "servicewikii.com" ;
+    :hasSecurityAnalysisDetails "organization=IR-ORG | updatedAt=1771945712298 | tlp=2 | pap=2 | endDate=1771945712298 | createdAt=1771945705692 | createdBy=responder5@irorg.com | updatedBy=responder5@irorg.com | startDate=1771945706267 | status=Success | data=servicewikii.com | dataType=domain | workerName=VirusTotal_GetReport_3_1 | workerId=473a9849035f969681a1a7bd034c1f2a | workerDefinitionId=VirusTotal_GetReport_3_1 | analyzerName=VirusTotal_GetReport_3_1 | analyzerId=473a9849035f969681a1a7bd034c1f2a | analyzerDefinitionId=VirusTotal_GetReport_3_1 | id=kYcxkJwBFaAWGO8qwATf | cacheTag=9671dfb7f66cec9a401e77ab6f441c33 | type=analyzer | taxonomy.namespace=VT | taxonomy.predicate=GetReport | taxonomy.value=15/93 | taxonomy.level=malicious | taxonomy.namespace=VT | taxonomy.predicate=GetReport | taxonomy.value=15 resolution(s) | taxonomy.level=malicious" ;
+    :hasAnalysisPerformingAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasSecurityAnalysisDateTime "2026-02-24T15:08"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/securityanalysis/4100288_analysis_2> a :SecurityAnalysis ;
+    :hasSecurityAnalysisType "hash" ;
+    :hasSecurityAnalysisDataValue "bd7bfae5915ee878f1f650324f07b5f567a29 7a3f8439834654e39d8268c5f0e" ;
+    :hasSecurityAnalysisDetails "organization=IR-ORG | updatedAt=1771945644219 | tlp=2 | pap=2 | endDate=1771945644218 | createdAt=1771945636012 | createdBy=responder5@irorg.com | updatedBy=responder5@irorg.com | startDate=1771945636142 | status=Success | data=bd7bfae5915ee878f1f650324f07b5f567a29 7a3f8439834654e39d8268c5f0e | dataType=hash | workerName=VirusTotal_GetReport_3_1 | workerId=473a9849035f969681a1a7bd034c1f2a | workerDefinitionId=VirusTotal_GetReport_3_1 | analyzerName=VirusTotal_GetReport_3_1 | analyzerId=473a9849035f969681a1a7bd034c1f2a | analyzerDefinitionId=VirusTotal_GetReport_3_1 | id=R4cwkJwBFaAWGO8qsAS3 | cacheTag=531e77ab8cedbbc4163f86e8d9cc8b10 | type=analyzer" ;
+    :hasAnalysisPerformingAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasSecurityAnalysisDateTime "2026-02-24T15:07"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/securityanalysis/4100288_analysis_3> a :SecurityAnalysis ;
+    :hasSecurityAnalysisType "hash" ;
+    :hasSecurityAnalysisDataValue "bd7bfae5915ee878f1f650324f07b5f567a29 7a3f8439834654e39d8268c5f0e" ;
+    :hasSecurityAnalysisDetails "organization=IR-ORG | updatedAt=1771945641769 | tlp=2 | pap=2 | endDate=1771945641768 | createdAt=1771945636012 | createdBy=responder5@irorg.com | updatedBy=responder5@irorg.com | startDate=1771945636136 | status=Failure | data=bd7bfae5915ee878f1f650324f07b5f567a29 7a3f8439834654e39d8268c5f0e | dataType=hash | workerName=CIRCLHashlookup_1_1 | workerId=5dbb22cc702c6fedf0a13188e90a31a3 | workerDefinitionId=CIRCLHashlookup_1_1 | analyzerName=CIRCLHashlookup_1_1 | analyzerId=5dbb22cc702c6fedf0a13188e90a31a3 | analyzerDefinitionId=CIRCLHashlookup_1_1 | id=RocwkJwBFaAWGO8qsAS3 | cacheTag=54c67d8df6fb8e4ce60c1a2ac903dd75 | type=analyzer" ;
+    :hasAnalysisPerformingAnalyst [ a :Analyst ; :hasAnalystEmail "responder5@irorg.com" ] ;
+    :hasSecurityAnalysisDateTime "2026-02-24T15:07"^^xsd:dateTime ;
+.
+
+<https://haulaah.github.io/CIRPO/chatchannel/4100288_bm1ashmcjpbzf8py5gsdncj48e> a :ChatChannel ;
+    :hasChatChannelId "bm1ashmcjpbzf8py5gsdncj48e" ;
+    :hasChatChannelName "ransomware-incident" ;
+    :isRelatedToIncident <https://haulaah.github.io/CIRPO/incident/4100288> ;
+    :containsChat <https://haulaah.github.io/CIRPO/chatmessage/4100288_msg_1> ;
+    :containsChat <https://haulaah.github.io/CIRPO/chatmessage/4100288_msg_2> ;
+    :containsChat <https://haulaah.github.io/CIRPO/chatmessage/4100288_msg_3> ;
+    :containsChat <https://haulaah.github.io/CIRPO/chatmessage/4100288_msg_4> ;
+.
+
+<https://haulaah.github.io/CIRPO/chatmessage/4100288_msg_1> a :ChatMessage ;
+    :hasChatMessageId "jup51gkbji8dpj6cjs19gg59qy" ;
+    :hasChatMessage "Identified ryuk ransomware by adding attributes to MISP event" ;
+    :hasChatMessageDateTime "2026-02-24T15:56"^^xsd:dateTime ;
+    :wasPostedTo <https://haulaah.github.io/CIRPO/chatchannel/4100288_bm1ashmcjpbzf8py5gsdncj48e> ;
+    :isRelatedToIncident <https://haulaah.github.io/CIRPO/incident/4100288> ;
+    :hasChatAnalyst [ a :Analyst ; :hasAnalystId "8xk8w5ogjtg7pjn7ib81n99wto" ; :hasAnalystEmail "responder5@irorg.com" ; ] ;
+.
+
+<https://haulaah.github.io/CIRPO/chatmessage/4100288_msg_2> a :ChatMessage ;
+    :hasChatMessageId "f3yemr686ib79jrfbxcatub8fa" ;
+    :hasChatMessage "Put artifacts into Cortex" ;
+    :hasChatMessageDateTime "2026-02-24T15:09"^^xsd:dateTime ;
+    :wasPostedTo <https://haulaah.github.io/CIRPO/chatchannel/4100288_bm1ashmcjpbzf8py5gsdncj48e> ;
+    :isRelatedToIncident <https://haulaah.github.io/CIRPO/incident/4100288> ;
+    :hasChatAnalyst [ a :Analyst ; :hasAnalystId "8xk8w5ogjtg7pjn7ib81n99wto" ; :hasAnalystEmail "responder5@irorg.com" ; ] ;
+.
+
+<https://haulaah.github.io/CIRPO/chatmessage/4100288_msg_3> a :ChatMessage ;
+    :hasChatMessageId "5xng5pb4kjdqbxwnrj14r8jfao" ;
+    :hasChatMessage "added artifacts" ;
+    :hasChatMessageDateTime "2026-02-24T14:53"^^xsd:dateTime ;
+    :wasPostedTo <https://haulaah.github.io/CIRPO/chatchannel/4100288_bm1ashmcjpbzf8py5gsdncj48e> ;
+    :isRelatedToIncident <https://haulaah.github.io/CIRPO/incident/4100288> ;
+    :hasChatAnalyst [ a :Analyst ; :hasAnalystId "8xk8w5ogjtg7pjn7ib81n99wto" ; :hasAnalystEmail "responder5@irorg.com" ; ] ;
+.
+
+<https://haulaah.github.io/CIRPO/chatmessage/4100288_msg_4> a :ChatMessage ;
+    :hasChatMessageId "rppt4egbxjnxdjmeqyeht5x8gh" ;
+    :hasChatMessage "Created case" ;
+    :hasChatMessageDateTime "2026-02-24T14:44"^^xsd:dateTime ;
+    :wasPostedTo <https://haulaah.github.io/CIRPO/chatchannel/4100288_bm1ashmcjpbzf8py5gsdncj48e> ;
+    :isRelatedToIncident <https://haulaah.github.io/CIRPO/incident/4100288> ;
+    :hasChatAnalyst [ a :Analyst ; :hasAnalystId "8xk8w5ogjtg7pjn7ib81n99wto" ; :hasAnalystEmail "responder5@irorg.com" ; ] ;
+.
+
