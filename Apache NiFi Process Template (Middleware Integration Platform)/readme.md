@@ -46,6 +46,7 @@ InvokeHTTP
      ↓
 Ontotext GraphDB
 
+```
 
 ## Research Publication
 
@@ -64,6 +65,8 @@ Publication Link: https://ieeexplore.ieee.org/document/11384833/
 > DOI: 10.1007/978-3-032-35579-9_22
 
 Publication Link: https://link.springer.com/chapter/10.1007/978-3-032-35579-9_22
+
+
 
 
 
