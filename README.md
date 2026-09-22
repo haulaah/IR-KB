@@ -22,6 +22,6 @@ Publication Link: https://ieeexplore.ieee.org/document/11384833/
 > H. S. Galadima, C. Doherty and R. Brennan,
 > "Graph Analysis of Incident Response Process Activities and Communications."
 > International Conference on Availability, Reliability and Security. Cham: Springer Nature Switzerland, 2026.
-> DOI: https://doi.org/10.1007/978-3-032-35579-9_22
+> DOI: 10.1007/978-3-032-35579-9_22
 
 Publication Link: https://link.springer.com/chapter/10.1007/978-3-032-35579-9_22
