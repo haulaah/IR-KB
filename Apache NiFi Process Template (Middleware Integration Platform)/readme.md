@@ -47,3 +47,23 @@ InvokeHTTP
 Ontotext GraphDB
 
 
+## Research Publication
+
+If you use this project please cite the following paper(s):
+
+> H. S. Galadima, C. Doherty and R. Brennan,
+> "Semantic Log Aggregation for a Machine Readable Knowledge Base of Incident Response Activities,"
+> 2025 Cyber Research Conference - Ireland (Cyber-RCI), Galway, Ireland, 2025, pp. 1-4.
+> DOI: 10.1109/Cyber-RCI68134.2025.11384833
+
+Publication Link: https://ieeexplore.ieee.org/document/11384833/
+
+> H. S. Galadima, C. Doherty and R. Brennan,
+> "Graph Analysis of Incident Response Process Activities and Communications."
+> International Conference on Availability, Reliability and Security. Cham: Springer Nature Switzerland, 2026.
+> DOI: 10.1007/978-3-032-35579-9_22
+
+Publication Link: https://link.springer.com/chapter/10.1007/978-3-032-35579-9_22
+
+
+
