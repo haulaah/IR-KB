@@ -1,0 +1,792 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:cirpo="https://w3id.org/cirpo#"
+    xml:base="https://w3id.org/cirpo">
+
+  <owl:Ontology rdf:about="https://w3id.org/cirpo">
+    <dct:title>Cyber Incident Response Process Ontology (CIRPO)</dct:title>
+    <dct:description>An ontology for modeling cybersecurity incident response processes</dct:description>
+    
+    <dct:creator rdf:parseType="Resource">
+      <foaf:name>Haula Galadima</foaf:name>
+      <rdfs:seeAlso rdf:resource="https://orcid.org/0009-0003-2485-3067"/>
+    </dct:creator>
+    <dct:creator rdf:parseType="Resource">
+      <foaf:name>Cormac Doherty</foaf:name>
+    </dct:creator>
+    <dct:creator rdf:parseType="Resource">
+      <foaf:name>Rob Brennan</foaf:name>
+      <rdfs:seeAlso rdf:resource="https://orcid.org/0000-0001-7099-6788"/>
+    </dct:creator>
+
+	
+    <dct:creator>Haula Galadima</dct:creator>
+    <dct:creator>Cormac Doherty</dct:creator>
+    <dct:creator>Rob Brennan</dct:creator>
+
+    <dct:publisher>CCI &amp; ADAPT, School of Computer Science, University College Dublin</dct:publisher>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-03</dct:created>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-12</dct:issued>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    
+
+    <dct:accessRights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public</dct:accessRights>
+    
+    <owl:versionInfo>7.0</owl:versionInfo>
+    <owl:versionIRI rdf:resource="https://w3id.org/cirpo/versions/7.0"/>
+    
+    <owl:priorVersion rdf:resource="https://w3id.org/cirpo/versions/6.0"/>
+    
+    <owl:sameAs rdf:resource="https://doi.org/10.5281/zenodo.NEW_DOI_PLACEHOLDER"/>
+    <dct:isVersionOf rdf:resource="https://doi.org/10.5281/zenodo.20597896"/>
+    <dct:bibliographicCitation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Galadima, H., Doherty, C., &amp; Brennan, R. (2026). Cyber Incident Response Process Ontology (CIRPO) Version 7.0. Zenodo. https://doi.org/10.5281/zenodo.NEW_DOI_PLACEHOLDER</dct:bibliographicCitation>
+    
+    <!-- Keywords -->
+    <dc:subject>cybersecurity</dc:subject>
+    <dc:subject>incident response</dc:subject>
+    <dc:subject>ontology</dc:subject>
+    <dc:subject>CSIRT</dc:subject>
+    
+    <rdfs:seeAlso rdf:resource="https://haulaah.github.io/CIRPO/"/>
+    <rdfs:seeAlso rdf:resource="https://github.com/moreiragb/csiho"/>
+    <rdfs:seeAlso rdf:resource="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf"/>
+    
+  </owl:Ontology>
+
+  
+  <!-- CLASSES -->
+
+
+  <!-- The main Incident class represents a cybersecurity incident that requires a response. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Incident">
+    <rdfs:label>Incident</rdfs:label>
+    <rdfs:comment>A security incident that requires investigation and response.</rdfs:comment>
+  </owl:Class>
+
+  <!-- Artefact represents observables collected ina an incident. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Artefact">
+    <rdfs:label>Artefact</rdfs:label>
+    <rdfs:comment>An observable piece of evidence collected from an incident.</rdfs:comment>
+  </owl:Class>
+
+  <!-- CourseOfAction is the parent class for all response activities taken during an incident. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#CourseOfAction">
+    <rdfs:label>Course of Action</rdfs:label>
+    <rdfs:comment>A planned response action to a security incident.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:Detection is the initial phase of identifying security incidents. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Detection">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>Detection</rdfs:label>
+    <rdfs:comment>Activities in detection of security incidents.</rdfs:comment>
+  </owl:Class>
+
+ <!-- COA:Analysis of security incidents. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Analysis">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>Analysis</rdfs:label>
+    <rdfs:comment>Activities to assess security incidents.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:Containment involves actions to limit the impact and spread of an incident. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Containment">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>Containment</rdfs:label>
+    <rdfs:comment>Actions to limit the spread and impact of an incident.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:Eradication focuses on removing the root cause of the incident from affected systems. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Eradication">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>Eradication</rdfs:label>
+    <rdfs:comment>Actions to remove threats and root causes from affected systems.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:Recovery involves restoring systems and services to normal operation after an incident. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Recovery">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>Recovery</rdfs:label>
+    <rdfs:comment>Actions to restore systems to normal operation.</rdfs:comment>
+  </owl:Class>
+
+  <!-- COA:PostIncidentActivity covers lessons learned and reporting after incident resolution. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#PostIncidentActivity">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>Post-Incident Activity</rdfs:label>
+    <rdfs:comment>Activities conducted after incident resolution (e.g., lessons learned, reporting).</rdfs:comment>
+  </owl:Class>
+
+  <!-- Analyst represents the security professionals who investigate and respond to incidents. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Analyst">
+    <rdfs:label>Analyst</rdfs:label>
+    <rdfs:comment>A security analyst who investigates and responds to incidents.</rdfs:comment>
+  </owl:Class>
+
+  <!-- Tier1 analysts are first responders performing initial triage and categorization. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Tier1">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>Tier 1</rdfs:label>
+    <rdfs:comment>First responder performing initial triage and categorization.</rdfs:comment>
+  </owl:Class>
+
+  <!-- Tier2 analysts handle incident response. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Tier2">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>Tier 2</rdfs:label>
+    <rdfs:comment>Incident responder handling deeper investigation and analysis.</rdfs:comment>
+  </owl:Class>
+
+  <!-- Tier3 analysts are senior experts handling complex investigations and threat hunting. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#Tier3">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>Tier 3</rdfs:label>
+    <rdfs:comment>Senior analyst or subject matter expert handling complex investigations.</rdfs:comment>
+  </owl:Class>
+
+  <!-- SecurityEvent represents alerts or occurrences detected by security monitoring systems. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#SecurityEvent">
+    <rdfs:label>Security Event</rdfs:label>
+    <rdfs:comment>An observable occurrence relevant to system security (e.g., alert from SIEM, IDS).</rdfs:comment>
+  </owl:Class>
+
+  <!-- SecurityEventAction represents specific actions taken within or in response to a security event. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#SecurityEventAction">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#SecurityEvent"/>
+    <rdfs:label>Security Event Action</rdfs:label>
+    <rdfs:comment>A specific action taken or observed within a security event.</rdfs:comment>
+  </owl:Class>
+
+  <!-- SecurityAnalysis represents the analysis performed on observables. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#SecurityAnalysis">
+    <rdfs:label>Security Analysis</rdfs:label>
+    <rdfs:comment>The analysis of observables from security events leading to an incident</rdfs:comment>
+  </owl:Class>
+
+  <!-- ResponderCommunication represents communication between responders. -->
+  <owl:Class rdf:about="https://w3id.org/cirpo#ResponderCommunication">
+    <rdfs:label>Responder Communication</rdfs:label>
+    <rdfs:comment> Any communication resource involved in incident response activities,including channels and individual chat messages</rdfs:comment>
+  </owl:Class>
+
+  <!-- ChatChannel respresents container that messages are posted to-->
+  <owl:Class rdf:about="https://w3id.org/cirpo#ChatChannel">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#ResponderCommunication"/>
+    <rdfs:label>Chat Channel</rdfs:label>
+    <rdfs:comment>A communication channel where responders exchange messages</rdfs:comment>
+  </owl:Class>
+
+  <!-- ChatMessage respresents messages by responders-->
+  <owl:Class rdf:about="https://w3id.org/cirpo#ChatMessage">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cirpo#ResponderCommunication"/>
+    <rdfs:label>Chat Message</rdfs:label>
+    <rdfs:comment>A message posted by a responder within a chat channel.</rdfs:comment>
+  </owl:Class>
+
+ 
+  <!-- DISJOINT CLASSES -->
+  
+
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="https://w3id.org/cirpo#Incident"/>
+      <rdf:Description rdf:about="https://w3id.org/cirpo#Artefact"/>
+      <rdf:Description rdf:about="https://w3id.org/cirpo#CourseOfAction"/>
+      <rdf:Description rdf:about="https://w3id.org/cirpo#Analyst"/>
+      <rdf:Description rdf:about="https://w3id.org/cirpo#SecurityEvent"/>
+      <rdf:Description rdf:about="https://w3id.org/cirpo#SecurityAnalysis"/>
+      <rdf:Description rdf:about="https://w3id.org/cirpo#ResponderCommunication"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+
+
+  <!-- DATA PROPERTIES -->
+
+
+
+  <!-- Artefact Properties -->
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasArtefactCreationDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Artefact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has artefact creation datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the artefact was collected.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasArtefactType">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Artefact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has artefact type</rdfs:label>
+    <rdfs:comment>Classification of the artefact.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasArtefactDataValue">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Artefact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has artefact data value</rdfs:label>
+    <rdfs:comment>The actual content or value of the artefact .</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Course of Action Properties -->
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasCoaCreationDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has COA creation datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the course of action was created.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasCoaDescription">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has COA description</rdfs:label>
+    <rdfs:comment>Narrative description of the course of action and its intended effect.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasCoaStatus">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has COA status</rdfs:label>
+    <rdfs:comment>Current execution status of the course of action.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasCoaStartDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has COA start datetime</rdfs:label>
+    <rdfs:comment>Timestamp when execution of the course of action was initiated.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+ <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasCoaEndDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has COA end datetime</rdfs:label>
+    <rdfs:comment>Timestamp when execution of the course of action was completed.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Incident Properties -->
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasIncidentId">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident ID</rdfs:label>
+    <rdfs:comment>Unique identifier for an incident.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasIncidentSeverity">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident severity</rdfs:label>
+    <rdfs:comment>The severity level of an incident (Low, Medium, High, Critical).</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasConfirmationDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has confirmation datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the incident was confirmed</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasIncidentDescription">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident description</rdfs:label>
+    <rdfs:comment>Detailed description of an incident. </rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasEndDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has end datetime</rdfs:label>
+    <rdfs:comment>Timestamp when incident response was formally concluded.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasIncidentName">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident name</rdfs:label>
+    <rdfs:comment>Title of the incident.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasIncidentCreationDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has incident creation datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the incident record was first created.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasIncidentStage">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident stage</rdfs:label>
+    <rdfs:comment>Current stage in the incident lifecycle.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasIncidentStatus">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has incident status</rdfs:label>
+    <rdfs:comment>Current status of the incident.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Analyst Properties -->
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasAnalystId">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has analyst ID</rdfs:label>
+    <rdfs:comment>Unique identifier for an analyst.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasAnalystEmail">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has analyst email</rdfs:label>
+    <rdfs:comment>Email address of the analyst.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Security Event Properties -->
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasEventId">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has event ID</rdfs:label>
+    <rdfs:comment>Unique identifier for a security event.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasEventTitle">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has event title</rdfs:label>
+    <rdfs:comment>Short description or name for the security event.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+<!-- Security Event Action Properties -->
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasEventDescription">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityEventAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has event description</rdfs:label>
+    <rdfs:comment>Detailed description of the security event.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasEventActivity">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityEventAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has event activity</rdfs:label>
+    <rdfs:comment>Description of the specific activity within a security event.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasEventActivityDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityEventAction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has event activity datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the specific security event activity occurred.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Security Analysis Properties -->
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasSecurityAnalysisType">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has security analysis data type</rdfs:label>
+    <rdfs:comment>The type of analysis performed.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasSecurityAnalysisDataValue">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has security analysis data value</rdfs:label>
+    <rdfs:comment>The data value to be analysed.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasSecurityAnalysisDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has security analysis datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the security analysis was performed.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasSecurityAnalysisDetails">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has security analysis details</rdfs:label>
+    <rdfs:comment>Detailed findings from the analysis.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <!-- Responder Communication Properties -->
+
+  <!-- Chat Channel Properties -->
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasChatChannelId">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatChannel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has chat channel ID</rdfs:label>
+    <rdfs:comment>Unique identifier of the communication channel.</rdfs:comment>
+  </owl:DatatypeProperty>  
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasChatChannelName">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatChannel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has chat channel name</rdfs:label>
+    <rdfs:comment>Name of the communication channel.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+
+ <!-- Chat Messsage Properties -->
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasChatMessageId">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatMessage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has chat message ID</rdfs:label>
+    <rdfs:comment>Unique identifier of the chat message.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasChatMessage">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatMessage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has chat message</rdfs:label>
+    <rdfs:comment>The content or body of the message.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasChatMessageDateTime">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatMessage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>has chat message datetime</rdfs:label>
+    <rdfs:comment>Timestamp when the communication occurred.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cirpo#hasChatSentiment">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatMessage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>has chat sentiment</rdfs:label>
+    <rdfs:comment>The sentiment or tone of the communication.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+
+
+
+
+  <!-- OBJECT PROPERTIES -->
+
+
+  <!-- Incident Properties -->
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasEvent">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#SecurityEvent"/>
+    <rdfs:label>has event</rdfs:label>
+    <rdfs:comment>Links an incident to one or more related security events that triggered or are part of it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#isEventOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#isEventOf">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityEvent"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:label>is event of</rdfs:label>
+    <rdfs:comment>Inverse of hasEvent. Links a security event back to its parent incident.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasArtefact">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Artefact"/>
+    <rdfs:label>has artefact</rdfs:label>
+    <rdfs:comment>Links an incident to related artefacts/observables collected during the investigation.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#isArtefactOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#isArtefactOf">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Artefact"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:label>is artefact of</rdfs:label>
+    <rdfs:comment>Inverse of hasArtefact. Links an artefact back to its incident.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasCoa">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>has course of action</rdfs:label>
+    <rdfs:comment>Links an incident to the response actions (COA) taken to resolve it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#isCoaOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#isCoaOf">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:label>is COA of</rdfs:label>
+    <rdfs:comment>Inverse of hasCoa. Links a course of action back to its incident.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasAnalysis">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:label>has analysis</rdfs:label>
+    <rdfs:comment>Links an incident to the security analyses performed on it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#isAnalysisOf"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#isAnalysisOf">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:label>is analysis of</rdfs:label>
+    <rdfs:comment>Inverse of hasAnalysis. Links an analysis back to its incident.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasConfirmationAnalyst">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>has confirmation analyst</rdfs:label>
+    <rdfs:comment>Links an incident to the analyst who confirmed it as a genuine security incident.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#confirmedIncident"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#confirmedIncident">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:label>confirmed incident</rdfs:label>
+    <rdfs:comment>Inverse of hasConfirmationAnalyst. Links an analyst to the incidents they confirmed.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasResponderCommunication">
+      <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+      <rdfs:range rdf:resource="https://w3id.org/cirpo#ResponderCommunication"/>
+      <owl:inverseOf rdf:resource="https://w3id.org/cirpo#isRelatedToIncident"/>
+      <rdfs:label>has responder communication</rdfs:label>
+      <rdfs:comment>Links an incident to any responder communication resource.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#isRelatedToIncident">
+      <rdfs:domain rdf:resource="https://w3id.org/cirpo#ResponderCommunication"/>
+      <rdfs:range rdf:resource="https://w3id.org/cirpo#Incident"/>
+      <owl:inverseOf rdf:resource="https://w3id.org/cirpo#hasResponderCommunication"/>
+      <rdfs:label>is related to incident</rdfs:label>
+      <rdfs:comment>Inverse of hasResponderCommunication. Links any responder communication back to the incident it is associated with.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasChannel">
+      <rdfs:subPropertyOf rdf:resource="https://w3id.org/cirpo#hasResponderCommunication"/>
+      <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+      <rdfs:range rdf:resource="https://w3id.org/cirpo#ChatChannel"/>
+      <owl:inverseOf rdf:resource="https://w3id.org/cirpo#isChannelOf"/>
+      <rdfs:label>has channel</rdfs:label>
+      <rdfs:comment>Links an incident to its chat channel.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#isChannelOf">
+      <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatChannel"/>
+      <rdfs:range rdf:resource="https://w3id.org/cirpo#Incident"/>
+      <owl:inverseOf rdf:resource="https://w3id.org/cirpo#hasChannel"/>
+      <rdfs:label>is channel of</rdfs:label>
+      <rdfs:comment>Inverse of hasChannel.</rdfs:comment>
+  </owl:ObjectProperty>
+  
+
+  <!-- Course of Action Properties -->
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasCoaCreationAnalyst">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>has COA creation analyst</rdfs:label>
+    <rdfs:comment>Links a course of action to the analyst who created or planned it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#createdCoa"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#createdCoa">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>created COA</rdfs:label>
+    <rdfs:comment>Inverse of hasCoaCreationAnalyst. Links an analyst to the courses of action they created.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasCoaAssignedAnalyst">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>has COA assigned analyst</rdfs:label>
+    <rdfs:comment>Links a course of action to the analyst responsible for executing it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#assignedToCoa"/>
+  </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#assignedToCoa">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>assigned to COA</rdfs:label>
+    <rdfs:comment>Inverse of hasCoaAssignedAnalyst. Links an analyst to the courses of action they are assigned to execute.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+
+  <!-- Artefact Properties -->
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasArtefactCreationAnalyst">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Artefact"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>has artefact creation analyst</rdfs:label>
+    <rdfs:comment>Links an artefact to the analyst who collected, created, or documented it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#createdArtefact"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#createdArtefact">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Artefact"/>
+    <rdfs:label>created artefact</rdfs:label>
+    <rdfs:comment>Inverse of hasArtefactCreationAnalyst. Links an analyst to the artefacts they created.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+  <!-- Security Analysis Properties -->
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasAnalysisPerformingAnalyst">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>has analysis performing analyst</rdfs:label>
+    <rdfs:comment>Links a security analysis to the analyst who performed it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#performedAnalysis"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#performedAnalysis">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:label>performed analysis</rdfs:label>
+    <rdfs:comment>Inverse of hasAnalysisPerformingAnalyst. Links an analyst to the analyses they performed.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  
+  
+  <!-- ResponderCommunication Properties -->
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#containsChat">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatChannel"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#ChatMessage"/>
+    <rdfs:label>contains chat</rdfs:label>
+    <rdfs:comment>Indicates that a channel contains chat messages.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#wasPostedTo"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#wasPostedTo">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatMessage"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#ChatChannel"/>
+    <rdfs:label>was posted to</rdfs:label>
+    <rdfs:comment>Indicates the channel where the chat message was posted.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hasChatAnalyst">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#ChatMessage"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>has chat analyst</rdfs:label>
+    <rdfs:comment>Links a chat message to the analyst who authored it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#generatedChat"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#generatedChat">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#ChatMessage"/>
+    <rdfs:label>generated chat</rdfs:label>
+    <rdfs:comment>Inverse of hasChatAnalyst.</rdfs:comment>
+  </owl:ObjectProperty>
+
+
+
+
+  <!-- PROV-O MAPPINGS -->
+  
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#SecurityEvent"/>
+    <rdfs:label>was generated by</rdfs:label>
+    <rdfs:comment>Indicates the security event that generated this analysis</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#generated"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasPerformedBy">
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>was performed by</rdfs:label>
+    <rdfs:comment>Indicates the analyst who performed this activity</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cirpo#SecurityEvent"/>
+          <rdf:Description rdf:about="https://w3id.org/cirpo#SecurityAnalysis"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#performed"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:label>was associated with</rdfs:label>
+    <rdfs:comment>Indicates association with an incident</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cirpo#Analyst"/>
+          <rdf:Description rdf:about="https://w3id.org/cirpo#Artefact"/>
+          <rdf:Description rdf:about="https://w3id.org/cirpo#SecurityEvent"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#hadAssociationWith"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#used">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:label>used</rdfs:label>
+    <rdfs:comment>Indicates that a course of action used specific analysis</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/cirpo#wasUsedBy"/>
+  </owl:ObjectProperty>
+  
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#generated">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityEvent"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:label>generated</rdfs:label>
+    <rdfs:comment>Inverse of prov:wasGeneratedBy. Indicates a security event generated an analysis.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#performed">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Analyst"/>
+    <rdfs:label>performed</rdfs:label>
+    <rdfs:comment>Inverse of prov:wasPerformedBy. Indicates an analyst performed an activity.</rdfs:comment>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cirpo#SecurityEvent"/>
+          <rdf:Description rdf:about="https://w3id.org/cirpo#SecurityAnalysis"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#hadAssociationWith">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#Incident"/>
+    <rdfs:label>had association with</rdfs:label>
+    <rdfs:comment>Inverse of prov:wasAssociatedWith. Indicates an incident's associated analyst, artefact, or security event.</rdfs:comment>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cirpo#Analyst"/>
+          <rdf:Description rdf:about="https://w3id.org/cirpo#Artefact"/>
+          <rdf:Description rdf:about="https://w3id.org/cirpo#SecurityEvent"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/cirpo#wasUsedBy">
+    <rdfs:domain rdf:resource="https://w3id.org/cirpo#SecurityAnalysis"/>
+    <rdfs:range rdf:resource="https://w3id.org/cirpo#CourseOfAction"/>
+    <rdfs:label>was used by</rdfs:label>
+    <rdfs:comment>Inverse of prov:used. Indicates an analysis was used by a course of action.</rdfs:comment>
+  </owl:ObjectProperty>
+
+</rdf:RDF>
